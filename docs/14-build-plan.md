@@ -10,7 +10,7 @@ Access and data scoping come first because every later screen depends on them an
 
 ## Timeline
 
-Target dates assume continuous work from 10 Nov 2026. They are targets, not promises; slips are recorded in the changelog. Stages S3 and S5 cannot finish until the workbooks are uploaded (15).
+Target dates assume continuous work from 10 Nov 2026. They are targets, not promises; slips are recorded in the changelog. The template workbooks arrived on 10 Nov, so no stage waits for column layouts or rules any more. Two things are still missing (15): the filled Auklet School demo (the final parity check in S5) and the Phase 4 design (F21 in S8).
 
 | Stage | Name | Completes as | Target |
 | --- | --- | --- | --- |
@@ -57,25 +57,26 @@ Exit checks: tests 2, 3, 8 and 9 of 12 pass; an admin can set up a firm, a clien
 | Version | Delivers |
 | --- | --- |
 | `v0.2.1` | The one write path (permission, validation, write, audit in a transaction) and human ID allocation. Owners and Systems grids (F6) with required-field alerts |
-| `v0.2.2` | Applications, Vendors, Security controls, Policies (F6); blocked delete with the list of linking records |
-| `v0.2.3` | Data Classification catalogue (F7): seed of 20 groups and 254 elements from the workbook, browse and search, per-client Public override |
+| `v0.2.2` | Applications, Vendors, Security controls, Policies (F6) with row alerts (R-0); blocked delete with the list of linking records |
+| `v0.2.3` | Organisation profile and departments (A8); seed script that turns the workbooks into `prisma/seed` JSON |
+| `v0.2.4` | Data Classification catalogue (F7): 20 groups and 254 elements, browse and search, per-client Public override, client-added elements |
 | `v0.3.0` | Admin catalogue editing with version history; audit entries (F20 recording) for all inventory changes; performance check on the stress fixture |
 
-Exit checks: every inventory entity can be created, edited and deleted with correct IDs; catalogue shows 254 elements in 20 groups; audit rows exist for each change; budget in 04 met.
+Exit checks: every inventory entity can be created, edited and deleted with correct IDs; every column and dropdown value in 17 Part 2 for these sheets exists in the app; row alerts match R-0 word for word; catalogue shows 254 elements in 20 groups; audit rows exist for each change; budget in 04 met.
 
-Depends on: Inventory workbook (exact columns) and Data Classification sheet. Without them, `v0.2.1` and `v0.2.2` are built from the Notion field lists and corrected when the files arrive; `v0.2.3` waits.
+Depends on: nothing outstanding.
 
 ## S3 Excel import and export -> v0.4.0
 
 | Version | Delivers |
 | --- | --- |
-| `v0.3.1` | Column mapping written into 10 from the real workbook. Inventory import (F3): parse, validate all, preview with problem list, all-or-nothing write, import history |
-| `v0.3.2` | Re-import with field-by-field change preview and confirm |
-| `v0.4.0` | Inventory export (F4) with the same layout and dropdowns; round-trip test |
+| `v0.3.1` | Cleaned templates committed under `lib/excel/templates/`. Import engine (F3): recognise workbook, find sheets and headers, validate all, preview with problem list and parity warnings, all-or-nothing write, import history. Inventory sheets of workbook 3 and both sheets of workbook 1 |
+| `v0.3.2` | Re-import with field-by-field change preview and confirm; sample-row handling |
+| `v0.4.0` | Export (F4) by filling the template, for workbook 1 and the inventory sheets of workbook 3; round-trip test |
 
-Exit checks: tests 6 and 7 of 12 pass; the owner's Inventory workbook imports cleanly and the export opens in Excel with working dropdowns.
+Exit checks: tests 6, 7 and 12 of 12 pass; the supplied templates import cleanly and the export opens in Excel with working dropdowns and formulas.
 
-Depends on: Inventory workbook. **Blocked without it.**
+Depends on: nothing outstanding. The other sheets are added to import and export in the stage that builds their screens (ROPA family in S4, workbook 4 in S5 and S6, workbook 2 in S7).
 
 ## S4 Discovery -> v0.5.0
 
@@ -83,26 +84,26 @@ Depends on: Inventory workbook. **Blocked without it.**
 | --- | --- |
 | `v0.4.1` | Activities (F8): grid and detail with the 14 ROPA fields, role, exemption, children, collection point and walkthrough tabs; links to systems, apps, vendors, controls |
 | `v0.4.2` | Activity elements (F9): catalogue picker, per-use flags, roll-ups (rule R-1) |
-| `v0.4.3` | Flow nodes (F10) and data flow steps (F11) with derived trust zone (R-2) |
-| `v0.4.4` | Data path checks (F12, R-3) shown beside the flow and on the activity grid |
-| `v0.5.0` | ROPA sheet import and export; Auklet School demo loads as a fixture through the importer |
+| `v0.4.3` | Flow nodes (F10) and data flow steps (F11) with node lookup and trust zone (R-2) |
+| `v0.4.4` | Step check, path check and cross-border check (F12; R-3, R-4, R-5) shown beside the flow and on the activity grid |
+| `v0.5.0` | Import and export of ROPA, Activity Data, Data Flow, Flow Nodes and Data Classification; the sample activity ACT-001 imports with no parity warning |
 
-Exit checks: the Auklet demo's activities, elements and flows load; roll-ups, zones and path checks match the workbook; no zone can be typed.
+Exit checks: all 45 ROPA columns are covered; roll-ups, zones and checks match R-1 to R-5 word for word in unit tests and on the sample activity; no zone can be typed for a system, app or vendor.
 
-Depends on: ROPA sheet and the Auklet demo workbook for R-2, R-3 and the fixture.
+Depends on: nothing outstanding.
 
 ## S5 Legal basis -> v0.6.0
 
 | Version | Delivers |
 | --- | --- |
-| `v0.5.1` | Test catalogue seeded from the workbook; admin editing with history and the Verify tag (F17) |
-| `v0.5.2` | Legal basis review (F14): route picker, tests for the route only, outcome and why (R-4), "not a legal opinion" note |
-| `v0.5.3` | Route mismatch flag (F15, R-5) and element check (F16) |
-| `v0.6.0` | Legal Basis Review sheet import and export; legal basis overview screen; **Auklet parity test passes** |
+| `v0.5.1` | Test catalogue: the 23 tests and the law notes seeded from workbook 4; admin editing with history and the Verify tag (F17) |
+| `v0.5.2` | Legal basis review (F14): route and Sec 7 clause, the test groups that apply, tests failed, tests open, outcome and why (R-7), "not a legal opinion" note |
+| `v0.5.3` | Route mismatch (F15, R-6) and element check with its per-element finding (F16, R-8) |
+| `v0.6.0` | Activity Review and Element Check import and export; legal basis overview screen; R-6 to R-8 unit tests cover every branch of the workbook formulas |
 
-Exit checks: test 1 of 12 passes exactly (1 Supported, 3 Gap, 2 Gap: no legal basis, 2 Cannot conclude yet).
+Exit checks: test 1 of 12, parts (a) and (b), passes. Part (c), the Auklet School totals (1 Supported, 3 Gap, 2 Gap: no legal basis, 2 Cannot conclude yet), is run as soon as the filled demo workbooks are supplied and is required before `v1.0.0`.
 
-Depends on: Legal Basis Review sheet. **Blocked without it.**
+Depends on: the filled Auklet School workbooks for part (c) only (O-1).
 
 ## S6 Findings, evidence, audit viewer -> v0.7.0
 
@@ -110,7 +111,7 @@ Depends on: Legal Basis Review sheet. **Blocked without it.**
 | --- | --- |
 | `v0.6.1` | Findings log (F18): against activity, system or vendor; auto-filled department and law reference; statuses; share flag; reviewer comments |
 | `v0.6.2` | Evidence (F19): compress, encrypt, MinIO; attach to finding, test answer, control; permission-checked download |
-| `v0.6.3` | Findings export that matches the screen |
+| `v0.6.3` | Findings sheet import and export; "export this view" that matches the screen |
 | `v0.7.0` | Audit log viewer (F20) per assessment and in Administration, with before and after values and filters |
 
 Exit checks: tests 10 and 11 of 12 pass; exported findings equal the on-screen list.
@@ -119,23 +120,23 @@ Exit checks: tests 10 and 11 of 12 pass; exported findings equal the on-screen l
 
 | Version | Delivers |
 | --- | --- |
-| `v0.7.1` | Phase 1 checklist (F5): entity questions, per-activity questions, applicability result (R-8) |
-| `v0.8.0` | Coverage dashboard (F13, R-6) as the assessment home: missing items, counts by outcome, links to the rows |
+| `v0.7.1` | Phase 1 checklist (F5, R-11): Part A once per assessment, Part B per activity, the 35 questions seeded from workbook 2, organisation-profile answers shown beside Part A; checklist import and export |
+| `v0.8.0` | Coverage dashboard (F13, R-10) as the assessment home: missing items, counts by outcome, links to the rows |
 
 Exit checks: checklist wording and law references match the workbook; every dashboard count links to exactly the rows it counts.
 
-Depends on: Applicability checklist workbook for F5.
+Depends on: nothing outstanding.
 
 ## S8 Security review and sign-off -> v0.9.0
 
 | Version | Delivers |
 | --- | --- |
-| `v0.8.1` | System security review (F21, R-7): five rows per system, evidence seen, result, highest tier |
+| `v0.8.1` | System security review (F21, R-12): five rows per system, evidence seen, result, highest tier |
 | `v0.9.0` | Send for review, sign-off and lock, admin unlock with reason (A7); catalogue version pinned at lock |
 
 Exit checks: test 4 of 12 passes; a reviewer can complete sign-off end to end; an assessor cannot.
 
-Depends on: the workbook or a written rule for the R-7 result matrix.
+Depends on: the Phase 4 design for F21 (O-8). **`v0.8.1` is blocked without it**; if it has not arrived when S8 starts, S8 ships sign-off only as `v0.9.0` and F21 moves after version 1, recorded as a decision.
 
 ## S9 Client access -> v0.10.0
 
@@ -168,12 +169,12 @@ F22 (other duties), F25 (diagram), F26 to F28 (rate, remediate, report), F29 (no
 | S0 | Not started | -- | |
 | S1 | Not started | -- | |
 | S2 | Not started | -- | |
-| S3 | Not started | -- | Needs workbooks |
-| S4 | Not started | -- | Needs workbooks |
-| S5 | Not started | -- | Needs workbooks |
+| S3 | Not started | -- | |
+| S4 | Not started | -- | |
+| S5 | Not started | -- | Final parity check needs the Auklet demo |
 | S6 | Not started | -- | |
-| S7 | Not started | -- | Needs checklist workbook |
-| S8 | Not started | -- | |
+| S7 | Not started | -- | |
+| S8 | Not started | -- | F21 needs the Phase 4 design |
 | S9 | Not started | -- | |
 | S10 | Not started | -- | |
 

@@ -15,17 +15,18 @@
 
 ## Tests that must always exist
 
-1. **Workbook parity (Auklet School).** Outcomes are exactly 1 Supported, 3 Gap, 2 Gap: no legal basis, 2 Cannot conclude yet, and each activity matches the workbook's outcome, why text, roll-ups and path checks.
+1. **Workbook parity.** (a) Every rule in 06 has table-driven unit tests written from the workbook formulas, one case per branch, asserting the exact result text. (b) Import compares Comply's computed values with the values cached in the workbook's auto columns and must report no parity warning for the sample activity. (c) Auklet School: outcomes are exactly 1 Supported, 3 Gap, 2 Gap: no legal basis, 2 Cannot conclude yet, and each activity matches the workbook. Part (c) is added when the filled demo workbooks are supplied; (a) and (b) do not wait for it.
 2. **Isolation.** A client user of client A requests every route and server action with IDs belonging to client B and gets "not found" each time. A firm user who is not a member of an assessment gets the same.
 3. **Role matrix.** One test per row of the table in 03, for all five roles.
 4. **Lock.** After sign-off no role except admin can change anything, and an admin change without a reason is refused.
 5. **Client view.** The data sent to a client contributor contains no assessor note, test, route or outcome field (checked on the response, not on the page).
 6. **Import is all-or-nothing.** A workbook with one bad row writes zero rows.
-7. **Round trip.** Export then import reproduces the same records.
+7. **Round trip.** Export then import reproduces the same records with no parity warnings, for all four workbooks.
 8. **Reset link.** Works once, expires on time, ends other sessions, and a tampered token is refused.
 9. **Lockout and settings.** Each security setting changes behaviour when switched, and the last admin cannot be locked out.
 10. **Evidence.** Stored bytes are not readable as the original; download returns the identical file; a user without permission is refused.
 11. **Audit.** Every write action in the role matrix produces an audit entry with before and after values.
+12. **Template hygiene.** No committed template or fixture contains a known client name.
 
 ## Release gate
 

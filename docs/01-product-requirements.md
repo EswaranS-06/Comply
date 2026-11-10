@@ -50,13 +50,14 @@ Details: [03-roles-and-permissions.md](03-roles-and-permissions.md).
 
 - One sign-in page, five roles, password reset, admin-controlled security settings, optional MFA.
 - Administration area: firm users, clients, client employees, assessments and their members, catalogues, security settings.
-- Excel import and export of the Inventory workbook and the ROPA, Legal Basis Review and Data Classification sheets.
+- Excel import and export of the four assessment workbooks: Organisation Profile, Applicability and Exemptions Checklist, the Inventory workbook (inventory, ROPA, Activity Data, Data Flow, Flow Nodes, Data Classification) and Legal Basis Review.
+- Organisation profile and departments (workbook 1).
 - Inventory: systems, applications, vendors, security controls, policies, owners.
 - Data Classification catalogue (254 elements in 20 groups, four tiers).
 - ROPA activities, their data elements, and their data flow with automatic trust zones.
 - Phase 1 applicability and exemptions checklist.
 - Legal Basis Review with automatic outcomes, and the element check.
-- System security review (Rule 6 items (a) to (e) per system).
+- System security review (Rule 6 per system), once its design is supplied (15, O-8).
 - One findings log, with evidence attachments.
 - Coverage dashboard and checks.
 - Audit log of every change to assessment data.
@@ -88,3 +89,4 @@ Details: [03-roles-and-permissions.md](03-roles-and-permissions.md).
 - Client-facing screens stay simple. Heavy process could make a client cancel.
 - Demo data uses pseudo names only.
 - Real client workbooks are never committed to git (`/source-workbooks/` is ignored).
+- Most client duties start about 13 May 2027 and Rule 4 about 13 Nov 2026, per the checklist workbook; both dates are to be verified.

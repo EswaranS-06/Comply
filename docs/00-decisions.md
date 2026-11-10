@@ -16,7 +16,11 @@ Each row is a decision the build relies on. "Owner" means the project owner (Esw
 | D-08 | 10 Nov 2026 | Only a reviewer or admin can sign off and lock an assessment. An assessor can never sign off their own work. | Owner (accepts Notion recommendation) |
 | D-09 | 10 Nov 2026 | Client contributors only enter facts. They never see legal tests, routes or outcomes. | Owner (accepts Notion recommendation) |
 | D-10 | 10 Nov 2026 | A client viewer sees shared findings only after the assessment is signed off. | Owner (accepts Notion recommendation) |
-| D-11 | 10 Nov 2026 | The Excel workbooks are the source of truth for catalogue content, test wording, column layouts and the Auklet School demo. The owner uploads them to `/srv/comply/source-workbooks/`. Nothing that depends on them is invented. | Owner |
+| D-11 | 10 Nov 2026 | The Excel workbooks are the source of truth for catalogue content, test wording, column layouts and the Auklet School demo. Nothing that depends on them is invented. The four template workbooks were supplied on 10 Nov 2026 and copied to `/srv/comply/source-workbooks/`; the Excel files stay out of git and are summarised in 17. | Owner |
+| D-12 | 10 Nov 2026 | Workbook 1 (organisation profile and departments) is part of version 1, although Notion did not list it, because the other workbooks refer to it. | Claude, from the workbooks. Owner to confirm |
+| D-13 | 10 Nov 2026 | One client is one legal entity. A group of companies is entered as several clients. | Claude, from the checklist's rule that each legal entity gets its own Part A. Owner to confirm |
+| D-14 | 10 Nov 2026 | Result texts (outcomes, checks, alerts) use the workbook's exact words, and the rules follow the workbook formulas even where they could be stricter. Additions are marked as app additions in 06. | Claude, so exports and the parity test match |
+| D-15 | 10 Nov 2026 | Checklist questions are shown with their part letter (A-E1, B-P3, C-D2) so they cannot be confused with element tests E1 and E2. Test refs are unchanged. | Claude. Owner to confirm |
 
 ## Technology
 

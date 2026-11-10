@@ -43,18 +43,25 @@ No wireframes were supplied; this list is the agreed starting point and is refin
 | Members | `/assessments/[id]/members` | Who is assessor and reviewer |
 | Import / export | `/assessments/[id]/excel` | Upload, preview of problems, confirm; export buttons; import history |
 
+### Organisation
+
+| Screen | Route | Notes |
+| --- | --- | --- |
+| Organisation profile | `/assessments/[id]/organisation` | The 37 questions of workbook 1 in seven sections; reference tables (Fourth Schedule classes, other laws) open in a side panel |
+| Departments | `/assessments/[id]/departments` | Name, contact, process, phone, email, handles personal data |
+
 ### Phase 1: Scope and Role
 
 | Screen | Route | Notes |
 | --- | --- | --- |
-| Entity checklist | `/assessments/[id]/scope` | Entity questions once; result panel: duties that can apply, exemptions to test |
-| Activity checklist | tab on the activity | Per-activity questions |
+| Entity checklist (Part A) | `/assessments/[id]/scope` | E1 to E13 in four groups; each row shows the question, what the answer decides, law reference, evidence to ask for, answer and client note; the client's matching answer from the organisation profile (section 7) is shown beside it |
+| Activity checklist (Part B) | tab on the activity | P0 to P14 in seven groups; P3 and P9 shown against the activity's role and legal basis |
 
 ### Phase 2: Discover Data
 
 | Screen | Route | Notes |
 | --- | --- | --- |
-| Owners | `.../inventory/owners` | |
+| Owners | `.../inventory/owners` | Person or department, with contact details |
 | Systems | `.../inventory/systems` | Grid; missing required fields flagged |
 | Applications | `.../inventory/applications` | Hosted-on picks a system |
 | Vendors | `.../inventory/vendors` | |
@@ -72,14 +79,14 @@ No wireframes were supplied; this list is the agreed starting point and is refin
 | Screen | Route | Notes |
 | --- | --- | --- |
 | Legal basis overview | `.../legal-basis` | All activities: route, outcome, why, mismatch flag |
-| Legal basis tab | on the activity | Route picker; only the tests for that route; each test shows question, plain reading, law reference (Verify tag), evidence to ask for; outcome and why update as answers change; "not a legal opinion" note |
+| Legal basis tab | on the activity | Route picker and Sec 7 clause; only the test groups that apply (consent, Sec 7, exemption if claimed, children if children's data); each test shows question, plain reading, law reference (Verify tag), evidence to ask for; outcome and why update as answers change; "not a legal opinion" note |
 | Element check | inside the legal basis tab | Needed, Named in notice per element |
 
 ### Phase 4: Duties
 
 | Screen | Route | Notes |
 | --- | --- | --- |
-| System security review | `.../security-review` | Five rows per system, Rule 6 (a) to (e); client says, evidence seen, result; highest data tier per row |
+| System security review | `.../security-review` | Not designed yet (06 R-12); screen is defined when the Phase 4 design arrives |
 
 ### Findings, evidence, sign-off
 
@@ -102,7 +109,8 @@ No wireframes were supplied; this list is the agreed starting point and is refin
 ## Main flows
 
 1. **Set up:** admin creates firm users and the client, adds client employees; assessor creates the assessment and adds a reviewer.
-2. **Bring in existing work:** assessor imports the Inventory workbook, reads the problem list, confirms.
+2. **Bring in existing work:** assessor imports any of the four workbooks, reads the problem list and parity warnings, confirms.
+   Then the organisation profile and departments are completed (by the assessor or a client contributor).
 3. **Discover:** assessor (or client contributor) completes inventory, adds activities from walkthroughs, picks elements, records the data flow; flags guide what is missing.
 4. **Scope:** assessor answers the Phase 1 checklist.
 5. **Legal basis:** assessor picks a route per activity and answers its tests; outcomes appear.

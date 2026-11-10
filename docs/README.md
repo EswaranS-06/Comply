@@ -2,7 +2,7 @@
 
 These documents define version 1 of Comply and how it is built. They live only on the `forge` branch.
 
-Source: the Notion page "DPDP Assessment App: Project Documents" (read 10 Nov 2026) plus the owner's answers recorded in [00-decisions.md](00-decisions.md). Where this folder and Notion differ, this folder wins, because it holds the later decisions.
+Source: the Notion page "DPDP Assessment App: Project Documents" (read 10 Nov 2026), the four Excel workbooks (read the same day, summarised in 17), and the owner's answers recorded in [00-decisions.md](00-decisions.md). Where this folder and Notion differ, this folder wins, because it holds the later decisions.
 
 ## Reading order
 
@@ -25,6 +25,7 @@ Source: the Notion page "DPDP Assessment App: Project Documents" (read 10 Nov 20
 | 14 | [Build plan](14-build-plan.md) | Stages, sub-versions, timeline, exit checks |
 | 15 | [Open items](15-open-items.md) | What is still missing or unverified |
 | 16 | [Skills log](16-skills-log.md) | Which agent skills are installed and when each was used |
+| 17 | [Workbook summary](17-workbook-summary.md) | What the four Excel workbooks contain: sheets, columns, dropdowns, catalogue, tests |
 | -- | [Changelog](CHANGELOG.md) | Every change to these documents and to the plan |
 
 ## Keeping these documents true
