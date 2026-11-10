@@ -28,6 +28,19 @@ Source: the Notion page "DPDP Assessment App: Project Documents" (read 10 Nov 20
 | 17 | [Workbook summary](17-workbook-summary.md) | What the four Excel workbooks contain: sheets, columns, dropdowns, catalogue, tests |
 | -- | [Changelog](CHANGELOG.md) | Every change to these documents and to the plan |
 
+## Working memory (3XX)
+
+Read these first in any new session. They record where the project stands and how the owner wants the work done, so nothing depends on a chat history.
+
+| # | Document | What it holds |
+| --- | --- | --- |
+| 300 | [Memory index and rules](300-mem-index.md) | What to read first, and how memory is kept |
+| 301 | [Owner and working rules](301-mem-owner-and-working-rules.md) | The owner's instructions and preferences |
+| 302 | [Project state](302-mem-project-state.md) | What is done, what is next, what is blocked |
+| 303 | [Environment](303-mem-environment.md) | The sandbox, paths, tools, recovery after a stop |
+| 304 | [Session log](304-mem-session-log.md) | What each session did |
+| 305 | [Lessons](305-mem-lessons.md) | What went wrong or was non-obvious |
+
 ## Keeping these documents true
 
 Plans change during a build. The rule is simple: **when the build departs from a document, the document is changed in the same commit as the code**, and one line is added to [CHANGELOG.md](CHANGELOG.md) saying what changed and why. A decision that reverses an earlier one is added to [00-decisions.md](00-decisions.md); the old entry is marked superseded, not deleted.

@@ -2,6 +2,12 @@
 
 Newest first. One line per change: what changed, in which document, and why.
 
+## 10 Nov 2026 (later still): working memory
+
+- 300 to 305 (new): working memory in `/docs`, at the owner's instruction, so that a build driven by Claude Sonnet (with a stronger model as subagent where needed) starts from everything learned so far and nothing is lost to context compaction.
+- `CLAUDE.md` rewritten: read the memory first, keep it current, do not build until the owner says so, how to brief subagents.
+- Build is on hold until the owner gives the go-ahead (301, I-18).
+
 ## 10 Nov 2026 (later): workbooks received
 
 - The four template workbooks were found in `/data/home/REX/DPDP-Workbooks`, copied to `source-workbooks/` (not committed) and read in full.
