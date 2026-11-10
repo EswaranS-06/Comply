@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>REX Cybersecurity | Resilience · Engineering · eXclusion</title>
+  <meta name="description" content="REX Cybersecurity: defence-led security research, detection engineering, offensive testing and education. Every finding ships with the commands, logs and detection logic behind it.">
+  <link rel="canonical" href="https://rex.example/">
+
+  <!-- Theme: set before first paint to avoid a flash. Stored choice > OS preference > dark. -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("rex-theme");
+        if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+      } catch (e) {}
+    })();
+  </script>
+  <meta name="color-scheme" content="dark light">
+  <meta name="theme-color" content="#09090B" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
+
+  <!-- Icons and manifest (asset/A-cut-r-mono/icons) -->
+  <link rel="icon" href="assets/icons/favicon.ico" sizes="48x48">
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+
+  <!-- Open Graph / social card (1200x630, rendered by scripts/render_og.py) -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="REX Cybersecurity">
+  <meta property="og:title" content="REX Cybersecurity | Resilience · Engineering · eXclusion">
+  <meta property="og:description" content="Defence-led security research, detection engineering and education.">
+  <meta property="og:url" content="https://rex.example/">
+  <meta property="og:image" content="https://rex.example/assets/og/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="REX Cybersecurity logo on obsidian with blue and violet diagonal cuts.">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Fonts: two families, limited weights, display=swap. Arial is a system font. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@500;700&display=swap">
+
+  <link rel="stylesheet" href="tokens.css">
+  <link rel="stylesheet" href="styles.css">
+  <script src="theme.js" defer></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "REX Cybersecurity",
+    "url": "https://rex.example/",
+    "logo": "https://rex.example/assets/icons/icon-512.png",
+    "description": "Defence-led security research, detection engineering, offensive testing and education."
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="lockup" href="#top" aria-label="REX Cybersecurity, home">
+        <svg class="lockup__icon" viewBox="2 2 96 96" aria-hidden="true" focusable="false"><path fill="#2563EB" d="M8 8L68 8L92 32L68 56L56 44L68 32L62 26L26 26ZM8 56L32 32L47 47L8 86Z"/><path fill="#A855F7" d="M38 68L53 53L92 92L62 92Z"/></svg>
+        <svg class="lockup__wordmark" viewBox="6.034 -6 375.606 112" aria-hidden="true" focusable="false"><path fill="#2563EB" d="M294.99 0L311.59 0L375.64 100L359.04 100Z"/><path fill="#A855F7" d="M359.04 0L375.64 0L345.115 47.658L336.815 34.699ZM325.515 52.342L333.815 65.301L311.59 100L294.99 100Z"/><path fill="currentColor" d="M27.937 100L12.034 100L12.034 0L49.427 0Q63.754 0 71.275 8.023Q78.797 16.046 78.797 30.086Q78.797 41.547 73.209 48.997Q67.622 56.447 57.163 58.166L80.229 100L62.464 100L41.261 59.599L27.937 59.599ZM158.453 100L158.453 0L221.06 0L221.06 13.467L174.499 13.467L174.499 42.55L219.341 42.55L219.341 56.017L174.499 56.017L174.499 86.533L221.06 86.533L221.06 100ZM47.135 46.705Q62.034 46.705 62.034 33.095L62.034 26.934Q62.034 13.324 47.135 13.324L27.937 13.324L27.937 46.705Z"/></svg>
+      </a>
+
+      <nav class="site-nav" aria-label="Primary">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#research">Research</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <button class="theme-toggle" type="button" aria-label="Switch to light theme" data-theme-toggle>
+        <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 1.5v3M12 19.5v3M1.5 12h3M19.5 12h3M4.6 4.6l2.1 2.1M17.3 17.3l2.1 2.1M4.6 19.4l2.1-2.1M17.3 6.7l2.1-2.1" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"/></svg>
+        <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="miter"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO: motif = diagonal cuts + slanted blocks (combination 02). One motif only. -->
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="container grid-12 hero__inner">
+        <div class="hero__copy">
+          <p class="eyebrow"><span class="eyebrow__rule" aria-hidden="true"></span>REX Cybersecurity / Defence</p>
+          <h1 class="hero__title" id="hero-title">
+            <span class="acr"><b>R</b>esilience<span class="acr__sep" aria-hidden="true"> ·</span></span>
+            <span class="acr"><b>E</b>ngineering<span class="acr__sep" aria-hidden="true"> ·</span></span>
+            <span class="acr">e<b>X</b>clusion</span>
+          </h1>
+          <p class="hero__lead">Security research and detection engineering for teams that need evidence, not adjectives. Every finding ships with the commands, logs and detection logic behind it.</p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#research">Read the research</a>
+            <a class="btn btn--ghost" href="#contact">Start a conversation</a>
+          </div>
+          <dl class="hero__meta">
+            <div><dt>Focus</dt><dd>Detection engineering</dd></div>
+            <div><dt>Method</dt><dd>Reproducible, evidence-led</dd></div>
+            <div><dt>Scope</dt><dd>Defence · Offence · Education</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section" id="about" aria-labelledby="about-title">
+      <div class="container grid-12">
+        <div class="col-5">
+          <p class="label">01 / About</p>
+          <h2 id="about-title">Defence first. Offence to prove it.</h2>
+          <p class="muted">REX is a security practice built around one rule: a control is only as good as the evidence that it works. Attack paths are reproduced in a lab, mapped to MITRE ATT&amp;CK, and turned into detections that are tested before they are shipped.</p>
+          <p class="muted">Write-ups stay technical. They name the tooling, show the telemetry and state the limits of each result.</p>
+        </div>
+
+        <div class="col-7 stack">
+          <figure class="terminal" aria-label="Example terminal session">
+            <div class="terminal__bar">
+              <span class="terminal__dots" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span class="terminal__title">rex@lab: ~/detections</span>
+            </div>
+<pre class="terminal__body" tabindex="0" aria-label="Terminal output, scrollable"><code><span class="t-prompt">$</span> rex verify --rule cred-dump-lsass.yml --replay atomic/T1003.001
+<span class="t-dim">[*] replaying 4 technique variants against sysmon + edr telemetry</span>
+<span class="t-ok">[+]</span> procdump.exe -ma lsass.exe  <span class="t-ok">detected  </span>1.8s
+<span class="t-ok">[+]</span> comsvcs.dll MiniDump        <span class="t-ok">detected  </span>2.1s
+<span class="t-ok">[+]</span> nanodump --fork             <span class="t-ok">detected  </span>2.4s
+<span class="t-warn">[!]</span> direct syscall handle dup   <span class="t-warn">gap       </span>logged
+<span class="t-dim">[*] 3/4 covered. gap filed as issue #142 with raw events attached.</span></code></pre>
+          </figure>
+
+          <ol class="timeline" aria-label="Recent milestones">
+            <li class="timeline__item">
+              <time class="timeline__date" datetime="2026-09">Sep 2026</time>
+              <h3 class="timeline__title">Detection pack: credential access</h3>
+              <p class="muted">Sigma and KQL rules for LSASS access, each validated against replayed attack telemetry.</p>
+            </li>
+            <li class="timeline__item">
+              <time class="timeline__date" datetime="2026-06">Jun 2026</time>
+              <h3 class="timeline__title">Purple-team lab, open sourced</h3>
+              <p class="muted">Infrastructure-as-code range for repeatable attack and detection exercises.</p>
+            </li>
+            <li class="timeline__item">
+              <time class="timeline__date" datetime="2026-02">Feb 2026</time>
+              <h3 class="timeline__title">Practice founded</h3>
+              <p class="muted">Defence, offence, education and professional services under one standard of evidence.</p>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES: diagonal-cut section, motif = dotted pattern (frequent). -->
+    <section class="section section--cut section--dots" id="services" aria-labelledby="services-title">
+      <div class="container">
+        <div class="section-head">
+          <p class="label">02 / Services</p>
+          <h2 id="services-title">Four disciplines, one standard of evidence.</h2>
+        </div>
+        <ul class="grid-12 cards" role="list">
+          <li class="col-3 card card--service">
+            <p class="card__index">01</p>
+            <h3 class="card__title">Defence</h3>
+            <p class="muted">Detection engineering, hardening reviews and incident readiness, measured against replayed attacks.</p>
+            <ul class="chips" role="list"><li class="chip">Sigma</li><li class="chip">KQL</li><li class="chip">Hardening</li></ul>
+          </li>
+          <li class="col-3 card card--service">
+            <p class="card__index">02</p>
+            <h3 class="card__title">Offence</h3>
+            <p class="muted">Scoped penetration testing and adversary emulation, reported with reproduction steps and fixes.</p>
+            <ul class="chips" role="list"><li class="chip">Pentest</li><li class="chip">AD</li><li class="chip">Emulation</li></ul>
+          </li>
+          <li class="col-3 card card--service">
+            <p class="card__index">03</p>
+            <h3 class="card__title">Education</h3>
+            <p class="muted">Explainers, workshops and labs that teach the mechanism behind an attack, not only the tool.</p>
+            <ul class="chips" role="list"><li class="chip">Workshops</li><li class="chip">Labs</li></ul>
+          </li>
+          <li class="col-3 card card--service">
+            <p class="card__index">04</p>
+            <h3 class="card__title">Professional</h3>
+            <p class="muted">Security architecture advice, control mapping and technical due diligence for engineering teams.</p>
+            <ul class="chips" role="list"><li class="chip">Architecture</li><li class="chip">Review</li></ul>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- RESEARCH -->
+    <section class="section" id="research" aria-labelledby="research-title">
+      <div class="container">
+        <div class="section-head section-head--split">
+          <div>
+            <p class="label">03 / Selected research</p>
+            <h2 id="research-title">Write-ups and projects</h2>
+          </div>
+          <a class="link-arrow" href="#research">All write-ups <span aria-hidden="true">&rarr;</span></a>
+        </div>
+
+        <ul class="grid-12 cards" role="list">
+          <li class="col-4 card card--post">
+            <p class="card__meta"><span>Write-up</span><time datetime="2026-09-14">14 Sep 2026</time></p>
+            <h3 class="card__title"><a class="card__link" href="#research">Catching LSASS dumps without trusting process names</a></h3>
+            <p class="muted">Four dump techniques, one detection model built on handle access rights rather than binary names.</p>
+            <ul class="chips" role="list"><li class="chip">T1003.001</li><li class="chip">Windows</li><li class="chip">Sigma</li></ul>
+          </li>
+          <li class="col-4 card card--post">
+            <p class="card__meta"><span>Project</span><time datetime="2026-06-02">02 Jun 2026</time></p>
+            <h3 class="card__title"><a class="card__link" href="#research">rex-range: a disposable purple-team lab</a></h3>
+            <p class="muted">Terraform and Ansible range with logging pre-wired, so every exercise produces comparable telemetry.</p>
+            <ul class="chips" role="list"><li class="chip">Terraform</li><li class="chip">Lab</li><li class="chip">Open source</li></ul>
+          </li>
+          <li class="col-4 card card--post">
+            <p class="card__meta"><span>Explainer</span><time datetime="2026-04-20">20 Apr 2026</time></p>
+            <h3 class="card__title"><a class="card__link" href="#research">Kerberoasting, from ticket request to cracked hash</a></h3>
+            <p class="muted">What the attack does on the wire, what it leaves in the logs, and which settings remove it.</p>
+            <ul class="chips" role="list"><li class="chip">T1558.003</li><li class="chip">Active Directory</li></ul>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- CONTACT: diagonal-cut section, angled frame panel. -->
+    <section class="section section--cut section--contact" id="contact" aria-labelledby="contact-title">
+      <div class="container grid-12">
+        <div class="col-7">
+          <p class="label">04 / Contact</p>
+          <h2 id="contact-title">Bring the problem. Expect evidence back.</h2>
+          <p class="muted">Engagements start with a short scoping call. Reports include raw data, reproduction steps and prioritised fixes.</p>
+        </div>
+        <div class="col-5 frame">
+          <dl class="contact-list">
+            <div><dt>Email</dt><dd><a href="mailto:contact@rex.example">contact@rex.example</a></dd></div>
+            <div><dt>GitHub</dt><dd><a href="https://github.com/">github.com/rex</a></dd></div>
+            <div><dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/">linkedin.com/company/rex</a></dd></div>
+            <div><dt>PGP</dt><dd class="mono-wrap">4F2A 9C1E 7B3D 0A55 E812 &hellip; 61C0</dd></div>
+          </dl>
+          <a class="btn btn--primary btn--block" href="mailto:contact@rex.example">Email REX</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <div class="site-footer__brand">
+        <svg class="lockup__icon" viewBox="2 2 96 96" aria-hidden="true" focusable="false"><path fill="#2563EB" d="M8 8L68 8L92 32L68 56L56 44L68 32L62 26L26 26ZM8 56L32 32L47 47L8 86Z"/><path fill="#A855F7" d="M38 68L53 53L92 92L62 92Z"/></svg>
+        <p class="label label--plain acr-line">Resilience · Engineering · eXclusion</p>
+      </div>
+      <nav aria-label="Footer">
+        <ul class="site-footer__links">
+          <li><a href="#research">Research</a></li>
+          <li><a href="https://github.com/">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/">LinkedIn</a></li>
+          <li><a href="mailto:contact@rex.example">Email</a></li>
+        </ul>
+      </nav>
+      <p class="site-footer__legal">&copy; 2026 REX Cybersecurity. Defence, offence, education and professional services.</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,11 @@
+:root {
+  --font-display: "Space Grotesk", system-ui, sans-serif;
+  --font-display-weight: 500;
+  --font-display-tracking: 0.020em;
+  --font-text: "Arial", Arial, Helvetica, sans-serif;
+  --font-text-weight: 400;
+  --font-text-tracking: 0.000em;
+  --font-mono: "IBM Plex Mono", ui-monospace, Consolas, monospace;
+  --font-mono-weight: 400;
+  --font-mono-tracking: 0.040em;
+}

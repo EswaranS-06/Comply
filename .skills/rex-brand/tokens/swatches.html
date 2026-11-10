@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>REX swatches</title>
+<style>
+  :root { --ink:#16181d; --muted:#5b6170; --line:#e3e5ea; --paper:#ffffff; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--paper); color:var(--ink);
+    font:14px/1.45 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif; }
+  main { max-width:1180px; margin:0 auto; padding:48px 40px 64px; }
+  header { display:flex; justify-content:space-between; align-items:flex-end; gap:24px;
+    border-bottom:1px solid var(--line); padding-bottom:20px; margin-bottom:32px; }
+  h1 { font-size:34px; letter-spacing:-0.02em; margin:0; }
+  h2 { font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); margin:40px 0 14px; }
+  header p { margin:6px 0 0; color:var(--muted); max-width:640px; }
+  .mono { font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:12px; }
+  .muted { color:var(--muted); }
+  .audit { margin:0; font-size:13px; color:var(--muted); white-space:nowrap; }
+  .brands { display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:20px; }
+  .brand { margin:0; border:1px solid var(--line); border-radius:14px; overflow:hidden; break-inside:avoid; }
+  .brand .chip { height:150px; padding:16px; display:flex; justify-content:space-between; align-items:flex-end;
+    font-weight:600; font-size:16px; }
+  .brand em { font-style:normal; font-size:11px; letter-spacing:.08em; text-transform:uppercase; opacity:.8; }
+  .ext-chip { display:grid; grid-template-columns:1fr 1fr; height:120px; }
+  .ext-half { padding:12px; display:flex; flex-direction:column; justify-content:space-between; font-size:12px; }
+  figcaption { display:flex; flex-direction:column; gap:3px; padding:14px 16px; font-size:12.5px; }
+  figcaption b { font-size:15px; }
+  .scale { display:grid; grid-template-columns:120px 1fr; gap:12px; align-items:stretch; margin-bottom:8px;
+    break-inside:avoid; }
+  .scale-name { font-weight:600; display:flex; flex-direction:column; justify-content:center; }
+  .scale-name small { font-weight:400; color:var(--muted); font-size:11px; }
+  .steps { display:grid; grid-template-columns:repeat(11,1fr); border-radius:10px; overflow:hidden; }
+  .step { min-height:64px; padding:8px 6px; display:flex; flex-direction:column; justify-content:space-between;
+    font-size:11px; }
+  .step b { font-size:12px; }
+  .step .mono { font-size:10px; }
+  .step.anchor { outline:3px solid var(--ink); outline-offset:-3px; }
+  .modes { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+  .mode { border:1px solid; border-radius:16px; padding:20px; break-inside:avoid; }
+  .mode-head { font-size:12px; letter-spacing:.12em; text-transform:uppercase; opacity:.7; margin-bottom:12px; }
+  .card { border:1px solid; border-radius:12px; padding:18px; }
+  .card h4 { margin:0 0 6px; font-size:18px; }
+  .card p { margin:0 0 14px; }
+  .card a { text-decoration:underline; }
+  .btns { display:flex; gap:10px; flex-wrap:wrap; margin-bottom:14px; }
+  .btn { padding:9px 16px; border-radius:9px; font-weight:600; font-size:13px; border:1px solid transparent; }
+  .btn.ghost { background:transparent; }
+  .alt { border-radius:9px; padding:10px; display:flex; gap:8px; flex-wrap:wrap; }
+  .badge { border:1.5px solid; border-radius:999px; padding:2px 10px; font-size:12px; font-weight:600; }
+  .pairs { width:100%; border-collapse:collapse; margin-top:14px; font-size:12px; }
+  .pairs td { padding:4px 0; border-top:1px solid rgba(127,127,127,.25); }
+  .pairs td:nth-child(2) { text-align:right; padding-right:12px; }
+  .pairs td:last-child { text-align:right; width:70px; }
+  .ok { opacity:.75; }
+  .bad { color:#c4001a; font-weight:700; background:#fff; border-radius:4px; }
+  @media (max-width:760px) { main { padding:28px 16px; } .modes { grid-template-columns:1fr; }
+    .scale { grid-template-columns:1fr; } .step .mono { display:none; } header { flex-direction:column;
+    align-items:flex-start; } }
+  @media print { main { padding:0; } body { -webkit-print-color-adjust:exact; print-color-adjust:exact; } }
+</style></head>
+<body><main>
+<header><div><h1>REX</h1><p>Obsidian ground, deep indigo for depth, blue as the main accent, violet used sparingly.</p></div><p class=audit>Audit: <b>pass</b> · 0 blocking · 4 warnings · 4 notes</p></header>
+<h2>Brand colours</h2>
+<section class="brands">
+<figure class="brand">
+  <div class="chip" style="background:#09090b;color:#ffffff"><span>Obsidian</span>
+    <em>locked</em></div>
+  <figcaption><b class=mono>#09090b</b><span class=mono>rgb(9 9 11)</span><span class=mono>oklch(14.1% 0.004 285.8)</span>
+    <span class=mono>Lab D50 2.5 / 0.2 / -0.8</span>
+    <span>on white 19.90:1 · on black 1.06:1</span><span class=muted>dark ground, primary surface</span>
+  </figcaption>
+</figure>
+<figure class="brand">
+  <div class="chip" style="background:#312e81;color:#ffffff"><span>Deep Indigo</span>
+    <em>locked</em></div>
+  <figcaption><b class=mono>#312e81</b><span class=mono>rgb(49 46 129)</span><span class=mono>oklch(35.9% 0.135 278.7)</span>
+    <span class=mono>Lab D50 23.6 / 22.2 / -47.5</span>
+    <span>on white 11.42:1 · on black 1.84:1</span><span class=muted>depth, panels, small accents</span>
+  </figcaption>
+</figure></section>
+<h2>Extended colours</h2>
+<section class="brands">
+<figure class="brand">
+  <div class="ext-chip"><div class='ext-half' style='background:#2563eb;color:#ffffff'><span>light</span><b class=mono>#2563eb</b><span class=mono>Aa 5.17:1</span></div><div class='ext-half' style='background:#2563eb;color:#ffffff'><span>dark</span><b class=mono>#2563eb</b><span class=mono>Aa 5.17:1</span></div></div>
+  <figcaption><b>ext-1 · Signal Blue</b><span class=mono>rgb(37 99 235)</span>
+    <span class=mono>oklch(54.6% 0.215 262.9)</span><span class=muted>primary accent</span></figcaption>
+</figure>
+<figure class="brand">
+  <div class="ext-chip"><div class='ext-half' style='background:#a855f7;color:#0f0f0f'><span>light</span><b class=mono>#a855f7</b><span class=mono>Aa 4.84:1</span></div><div class='ext-half' style='background:#a855f7;color:#0f0f0f'><span>dark</span><b class=mono>#a855f7</b><span class=mono>Aa 4.84:1</span></div></div>
+  <figcaption><b>ext-2 · Ultraviolet</b><span class=mono>rgb(168 85 247)</span>
+    <span class=mono>oklch(62.7% 0.233 303.9)</span><span class=muted>secondary accent, sparingly</span></figcaption>
+</figure>
+<figure class="brand">
+  <div class="ext-chip"><div class='ext-half' style='background:#ffffff;color:#0f0f0f'><span>light</span><b class=mono>#ffffff</b><span class=mono>Aa 19.17:1</span></div><div class='ext-half' style='background:#ffffff;color:#0f0f0f'><span>dark</span><b class=mono>#ffffff</b><span class=mono>Aa 19.17:1</span></div></div>
+  <figcaption><b>ext-3 · White</b><span class=mono>rgb(255 255 255)</span>
+    <span class=mono>oklch(100.0% 0.000 0.0)</span><span class=muted>light ground, text on dark</span></figcaption>
+</figure></section>
+<h2>Scales</h2>
+<section><div class=scale><div class=scale-name>primary<small>anchor 950</small></div><div class=steps><div class='step' style='background:#f7f7f8;color:#111111'><b>50</b><span class=mono>#f7f7f8</span></div><div class='step' style='background:#ededed;color:#111111'><b>100</b><span class=mono>#ededed</span></div><div class='step' style='background:#d9d9db;color:#111111'><b>200</b><span class=mono>#d9d9db</span></div><div class='step' style='background:#bfbfc1;color:#111111'><b>300</b><span class=mono>#bfbfc1</span></div><div class='step' style='background:#9e9ea1;color:#111111'><b>400</b><span class=mono>#9e9ea1</span></div><div class='step' style='background:#88888b;color:#111111'><b>500</b><span class=mono>#88888b</span></div><div class='step' style='background:#67676a;color:#ffffff'><b>600</b><span class=mono>#67676a</span></div><div class='step' style='background:#4d4d50;color:#ffffff'><b>700</b><span class=mono>#4d4d50</span></div><div class='step' style='background:#38383b;color:#ffffff'><b>800</b><span class=mono>#38383b</span></div><div class='step' style='background:#29292c;color:#ffffff'><b>900</b><span class=mono>#29292c</span></div><div class='step anchor' style='background:#09090b;color:#ffffff'><b>950</b><span class=mono>#09090b</span></div></div></div><div class=scale><div class=scale-name>neutral<small>tinted toward none</small></div><div class=steps><div class='step' style='background:#fafafa;color:#111111'><b>50</b><span class=mono>#fafafa</span></div><div class='step' style='background:#f3f3f3;color:#111111'><b>100</b><span class=mono>#f3f3f3</span></div><div class='step' style='background:#e6e6e6;color:#111111'><b>200</b><span class=mono>#e6e6e6</span></div><div class='step' style='background:#d4d4d4;color:#111111'><b>300</b><span class=mono>#d4d4d4</span></div><div class='step' style='background:#a1a1a1;color:#111111'><b>400</b><span class=mono>#a1a1a1</span></div><div class='step' style='background:#737373;color:#ffffff'><b>500</b><span class=mono>#737373</span></div><div class='step' style='background:#555555;color:#ffffff'><b>600</b><span class=mono>#555555</span></div><div class='step' style='background:#414141;color:#ffffff'><b>700</b><span class=mono>#414141</span></div><div class='step' style='background:#2b2b2b;color:#ffffff'><b>800</b><span class=mono>#2b2b2b</span></div><div class='step' style='background:#1c1c1c;color:#ffffff'><b>900</b><span class=mono>#1c1c1c</span></div><div class='step' style='background:#0f0f0f;color:#ffffff'><b>950</b><span class=mono>#0f0f0f</span></div></div></div><div class=scale><div class=scale-name>accent<small>anchor 900</small></div><div class=steps><div class='step' style='background:#f6f7ff;color:#111111'><b>50</b><span class=mono>#f6f7ff</span></div><div class='step' style='background:#eaedff;color:#111111'><b>100</b><span class=mono>#eaedff</span></div><div class='step' style='background:#d7dbf8;color:#111111'><b>200</b><span class=mono>#d7dbf8</span></div><div class='step' style='background:#bcc2eb;color:#111111'><b>300</b><span class=mono>#bcc2eb</span></div><div class='step' style='background:#9da3da;color:#111111'><b>400</b><span class=mono>#9da3da</span></div><div class='step' style='background:#878ecc;color:#111111'><b>500</b><span class=mono>#878ecc</span></div><div class='step' style='background:#666cc4;color:#ffffff'><b>600</b><span class=mono>#666cc4</span></div><div class='step' style='background:#4f4fb4;color:#ffffff'><b>700</b><span class=mono>#4f4fb4</span></div><div class='step' style='background:#3d3a9c;color:#ffffff'><b>800</b><span class=mono>#3d3a9c</span></div><div class='step anchor' style='background:#312e81;color:#ffffff'><b>900</b><span class=mono>#312e81</span></div><div class='step' style='background:#232545;color:#ffffff'><b>950</b><span class=mono>#232545</span></div></div></div><div class=scale><div class=scale-name>success<small></small></div><div class=steps><div class='step' style='background:#ecfcf5;color:#111111'><b>50</b><span class=mono>#ecfcf5</span></div><div class='step' style='background:#d6f8eb;color:#111111'><b>100</b><span class=mono>#d6f8eb</span></div><div class='step' style='background:#98f4d5;color:#111111'><b>200</b><span class=mono>#98f4d5</span></div><div class='step' style='background:#66e2bc;color:#111111'><b>300</b><span class=mono>#66e2bc</span></div><div class='step' style='background:#3fc6a0;color:#111111'><b>400</b><span class=mono>#3fc6a0</span></div><div class='step' style='background:#2bb28e;color:#111111'><b>500</b><span class=mono>#2bb28e</span></div><div class='step' style='background:#0d9373;color:#111111'><b>600</b><span class=mono>#0d9373</span></div><div class='step' style='background:#08795e;color:#ffffff'><b>700</b><span class=mono>#08795e</span></div><div class='step' style='background:#06644d;color:#ffffff'><b>800</b><span class=mono>#06644d</span></div><div class='step' style='background:#045440;color:#ffffff'><b>900</b><span class=mono>#045440</span></div><div class='step' style='background:#073025;color:#ffffff'><b>950</b><span class=mono>#073025</span></div></div></div><div class=scale><div class=scale-name>warning<small></small></div><div class=steps><div class='step' style='background:#fff6ec;color:#111111'><b>50</b><span class=mono>#fff6ec</span></div><div class='step' style='background:#ffebd6;color:#111111'><b>100</b><span class=mono>#ffebd6</span></div><div class='step' style='background:#f9d9b4;color:#111111'><b>200</b><span class=mono>#f9d9b4</span></div><div class='step' style='background:#f3bd7f;color:#111111'><b>300</b><span class=mono>#f3bd7f</span></div><div class='step' style='background:#e59b37;color:#111111'><b>400</b><span class=mono>#e59b37</span></div><div class='step' style='background:#cf8925;color:#111111'><b>500</b><span class=mono>#cf8925</span></div><div class='step' style='background:#ad6e0a;color:#111111'><b>600</b><span class=mono>#ad6e0a</span></div><div class='step' style='background:#8f5a06;color:#ffffff'><b>700</b><span class=mono>#8f5a06</span></div><div class='step' style='background:#764a04;color:#ffffff'><b>800</b><span class=mono>#764a04</span></div><div class='step' style='background:#633d03;color:#ffffff'><b>900</b><span class=mono>#633d03</span></div><div class='step' style='background:#3a2305;color:#ffffff'><b>950</b><span class=mono>#3a2305</span></div></div></div><div class=scale><div class=scale-name>danger<small></small></div><div class=steps><div class='step' style='background:#fff5f3;color:#111111'><b>50</b><span class=mono>#fff5f3</span></div><div class='step' style='background:#ffe9e6;color:#111111'><b>100</b><span class=mono>#ffe9e6</span></div><div class='step' style='background:#fed3cd;color:#111111'><b>200</b><span class=mono>#fed3cd</span></div><div class='step' style='background:#feb2a8;color:#111111'><b>300</b><span class=mono>#feb2a8</span></div><div class='step' style='background:#fe8477;color:#111111'><b>400</b><span class=mono>#fe8477</span></div><div class='step' style='background:#f86156;color:#111111'><b>500</b><span class=mono>#f86156</span></div><div class='step' style='background:#e0312e;color:#ffffff'><b>600</b><span class=mono>#e0312e</span></div><div class='step' style='background:#b4312b;color:#ffffff'><b>700</b><span class=mono>#b4312b</span></div><div class='step' style='background:#922c27;color:#ffffff'><b>800</b><span class=mono>#922c27</span></div><div class='step' style='background:#7a2520;color:#ffffff'><b>900</b><span class=mono>#7a2520</span></div><div class='step' style='background:#471713;color:#ffffff'><b>950</b><span class=mono>#471713</span></div></div></div><div class=scale><div class=scale-name>info<small></small></div><div class=steps><div class='step' style='background:#f2f8ff;color:#111111'><b>50</b><span class=mono>#f2f8ff</span></div><div class='step' style='background:#e3f0ff;color:#111111'><b>100</b><span class=mono>#e3f0ff</span></div><div class='step' style='background:#c7e2fe;color:#111111'><b>200</b><span class=mono>#c7e2fe</span></div><div class='step' style='background:#9ecdfe;color:#111111'><b>300</b><span class=mono>#9ecdfe</span></div><div class='step' style='background:#66b2fd;color:#111111'><b>400</b><span class=mono>#66b2fd</span></div><div class='step' style='background:#3e9ef7;color:#111111'><b>500</b><span class=mono>#3e9ef7</span></div><div class='step' style='background:#2681d2;color:#111111'><b>600</b><span class=mono>#2681d2</span></div><div class='step' style='background:#196aaf;color:#ffffff'><b>700</b><span class=mono>#196aaf</span></div><div class='step' style='background:#125792;color:#ffffff'><b>800</b><span class=mono>#125792</span></div><div class='step' style='background:#0f487a;color:#ffffff'><b>900</b><span class=mono>#0f487a</span></div><div class='step' style='background:#0c2a46;color:#ffffff'><b>950</b><span class=mono>#0c2a46</span></div></div></div><div class=scale><div class=scale-name>ext-1<small>anchor 700</small></div><div class=steps><div class='step' style='background:#f4f8ff;color:#111111'><b>50</b><span class=mono>#f4f8ff</span></div><div class='step' style='background:#e8f0ff;color:#111111'><b>100</b><span class=mono>#e8f0ff</span></div><div class='step' style='background:#d1e1fe;color:#111111'><b>200</b><span class=mono>#d1e1fe</span></div><div class='step' style='background:#b1ccfe;color:#111111'><b>300</b><span class=mono>#b1ccfe</span></div><div class='step' style='background:#89b1fe;color:#111111'><b>400</b><span class=mono>#89b1fe</span></div><div class='step' style='background:#6d9dfd;color:#111111'><b>500</b><span class=mono>#6d9dfd</span></div><div class='step' style='background:#417dfc;color:#111111'><b>600</b><span class=mono>#417dfc</span></div><div class='step anchor' style='background:#2563eb;color:#ffffff'><b>700</b><span class=mono>#2563eb</span></div><div class='step' style='background:#184ec7;color:#ffffff'><b>800</b><span class=mono>#184ec7</span></div><div class='step' style='background:#1340a5;color:#ffffff'><b>900</b><span class=mono>#1340a5</span></div><div class='step' style='background:#102652;color:#ffffff'><b>950</b><span class=mono>#102652</span></div></div></div><div class=scale><div class=scale-name>ext-2<small>anchor 600</small></div><div class=steps><div class='step' style='background:#f9f5ff;color:#111111'><b>50</b><span class=mono>#f9f5ff</span></div><div class='step' style='background:#f3ecff;color:#111111'><b>100</b><span class=mono>#f3ecff</span></div><div class='step' style='background:#e8d9fe;color:#111111'><b>200</b><span class=mono>#e8d9fe</span></div><div class='step' style='background:#d9befe;color:#111111'><b>300</b><span class=mono>#d9befe</span></div><div class='step' style='background:#c79bfe;color:#111111'><b>400</b><span class=mono>#c79bfe</span></div><div class='step' style='background:#bb80fd;color:#111111'><b>500</b><span class=mono>#bb80fd</span></div><div class='step anchor' style='background:#a855f7;color:#111111'><b>600</b><span class=mono>#a855f7</span></div><div class='step' style='background:#902de0;color:#ffffff'><b>700</b><span class=mono>#902de0</span></div><div class='step' style='background:#732db0;color:#ffffff'><b>800</b><span class=mono>#732db0</span></div><div class='step' style='background:#5e2890;color:#ffffff'><b>900</b><span class=mono>#5e2890</span></div><div class='step' style='background:#33194d;color:#ffffff'><b>950</b><span class=mono>#33194d</span></div></div></div><div class=scale><div class=scale-name>ext-3<small>anchor 50</small></div><div class=steps><div class='step anchor' style='background:#ffffff;color:#111111'><b>50</b><span class=mono>#ffffff</span></div><div class='step' style='background:#f6f6f6;color:#111111'><b>100</b><span class=mono>#f6f6f6</span></div><div class='step' style='background:#e5e5e5;color:#111111'><b>200</b><span class=mono>#e5e5e5</span></div><div class='step' style='background:#cecece;color:#111111'><b>300</b><span class=mono>#cecece</span></div><div class='step' style='background:#b1b1b1;color:#111111'><b>400</b><span class=mono>#b1b1b1</span></div><div class='step' style='background:#9e9e9e;color:#111111'><b>500</b><span class=mono>#9e9e9e</span></div><div class='step' style='background:#818181;color:#111111'><b>600</b><span class=mono>#818181</span></div><div class='step' style='background:#696969;color:#ffffff'><b>700</b><span class=mono>#696969</span></div><div class='step' style='background:#565656;color:#ffffff'><b>800</b><span class=mono>#565656</span></div><div class='step' style='background:#484848;color:#ffffff'><b>900</b><span class=mono>#484848</span></div><div class='step' style='background:#292929;color:#ffffff'><b>950</b><span class=mono>#292929</span></div></div></div></section>
+<h2>Roles in use</h2>
+<section class="modes">
+<div class="mode" style="background:#ffffff;color:#1c1c1c;border-color:#e6e6e6">
+  <div class="mode-head"><span>light</span></div>
+  <div class="card" style="background:#fafafa;border-color:#e6e6e6">
+    <h4 style="color:#1c1c1c">Heading on surface</h4>
+    <p style="color:#555555">Muted supporting copy with a <a style="color:#312e81">text link</a>.</p>
+    <div class="btns">
+      <span class="btn" style="background:#09090b;color:#ffffff">Primary</span>
+      <span class="btn" style="background:#312e81;color:#ffffff">Accent</span>
+      <span class="btn ghost" style="color:#1c1c1c;border-color:#e6e6e6;
+        box-shadow:0 0 0 2px #ffffff,0 0 0 4px #312e81">Focused</span>
+    </div>
+    <div class="alt" style="background:#f3f3f3"><span class=badge style='color:#08795e;border-color:#08795e'>Success</span><span class=badge style='color:#8f5a06;border-color:#8f5a06'>Warning</span><span class=badge style='color:#b4312b;border-color:#b4312b'>Danger</span><span class=badge style='color:#196aaf;border-color:#196aaf'>Info</span></div>
+  </div>
+  <table class="pairs" style="color:#1c1c1c"><tr><td>Ink / Ground</td><td class=mono>17.04:1</td><td class='ok'>pass 4.5</td></tr><tr><td>Muted ink / Ground</td><td class=mono>7.46:1</td><td class='ok'>pass 4.5</td></tr><tr><td>Ink / Surface</td><td class=mono>16.33:1</td><td class='ok'>pass 4.5</td></tr><tr><td>On primary / Primary</td><td class=mono>19.90:1</td><td class='ok'>pass 4.5</td></tr><tr><td>On accent / Accent</td><td class=mono>11.42:1</td><td class='ok'>pass 4.5</td></tr><tr><td>Link / Ground</td><td class=mono>11.42:1</td><td class='ok'>pass 4.5</td></tr><tr><td>Focus / Ground</td><td class=mono>11.42:1</td><td class='ok'>pass 3.0</td></tr><tr><td>Danger / Ground</td><td class=mono>6.15:1</td><td class='ok'>pass 3.0</td></tr><tr><td>Success / Ground</td><td class=mono>5.38:1</td><td class='ok'>pass 3.0</td></tr></table>
+</div>
+<div class="mode" style="background:#0f0f0f;color:#f3f3f3;border-color:#414141">
+  <div class="mode-head"><span>dark</span></div>
+  <div class="card" style="background:#1c1c1c;border-color:#414141">
+    <h4 style="color:#f3f3f3">Heading on surface</h4>
+    <p style="color:#a1a1a1">Muted supporting copy with a <a style="color:#878ecc">text link</a>.</p>
+    <div class="btns">
+      <span class="btn" style="background:#878ecc;color:#0f0f0f">Primary</span>
+      <span class="btn" style="background:#878ecc;color:#0f0f0f">Accent</span>
+      <span class="btn ghost" style="color:#f3f3f3;border-color:#414141;
+        box-shadow:0 0 0 2px #0f0f0f,0 0 0 4px #878ecc">Focused</span>
+    </div>
+    <div class="alt" style="background:#2b2b2b"><span class=badge style='color:#3fc6a0;border-color:#3fc6a0'>Success</span><span class=badge style='color:#e59b37;border-color:#e59b37'>Warning</span><span class=badge style='color:#fe8477;border-color:#fe8477'>Danger</span><span class=badge style='color:#66b2fd;border-color:#66b2fd'>Info</span></div>
+  </div>
+  <table class="pairs" style="color:#f3f3f3"><tr><td>Ink / Ground</td><td class=mono>17.27:1</td><td class='ok'>pass 4.5</td></tr><tr><td>Muted ink / Ground</td><td class=mono>7.42:1</td><td class='ok'>pass 4.5</td></tr><tr><td>Ink / Surface</td><td class=mono>15.36:1</td><td class='ok'>pass 4.5</td></tr><tr><td>On primary / Primary</td><td class=mono>6.18:1</td><td class='ok'>pass 4.5</td></tr><tr><td>On accent / Accent</td><td class=mono>6.18:1</td><td class='ok'>pass 4.5</td></tr><tr><td>Link / Ground</td><td class=mono>6.18:1</td><td class='ok'>pass 4.5</td></tr><tr><td>Focus / Ground</td><td class=mono>6.18:1</td><td class='ok'>pass 3.0</td></tr><tr><td>Danger / Ground</td><td class=mono>8.02:1</td><td class='ok'>pass 3.0</td></tr><tr><td>Success / Ground</td><td class=mono>8.94:1</td><td class='ok'>pass 3.0</td></tr></table>
+</div></section>
+<p class="muted" style="margin-top:32px;font-size:12px">Contrast: WCAG 2.x ratios, unrounded. Lab D50 values are computed from sRGB for print hand-off; CMYK needs the printer&#x27;s ICC profile and Pantone matches need a physical guide. Generated by brand-identity from palette.json. Edit the palette, not this file.</p>
+</main></body></html>

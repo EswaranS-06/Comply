@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="660" height="610" viewBox="0 0 660 610">
+  <title>REX Cybersecurity — Colour Icon</title>
+  <defs>
+    <linearGradient id="top" x1="0" y1="0" x2="1" y2="0.8">
+      <stop offset="0%" stop-color="#0875FF"/>
+      <stop offset="35%" stop-color="#2563EB"/>
+      <stop offset="65%" stop-color="#5145E8"/>
+      <stop offset="100%" stop-color="#A855F7"/>
+    </linearGradient>
+    <linearGradient id="blue" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0788FF"/>
+      <stop offset="55%" stop-color="#2563EB"/>
+      <stop offset="100%" stop-color="#312E81"/>
+    </linearGradient>
+    <linearGradient id="purple" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#4338CA"/>
+      <stop offset="50%" stop-color="#7C3AED"/>
+      <stop offset="100%" stop-color="#A855F7"/>
+    </linearGradient>
+    <linearGradient id="facetBlue" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#60A5FA" stop-opacity=".32"/>
+      <stop offset="100%" stop-color="#2563EB" stop-opacity=".02"/>
+    </linearGradient>
+    <linearGradient id="facetPurple" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#C084FC" stop-opacity=".22"/>
+      <stop offset="100%" stop-color="#7C3AED" stop-opacity=".03"/>
+    </linearGradient>
+
+    <!-- Outer boundaries now identical to the mono icon, so the gaps match -->
+    <clipPath id="topShape">
+      <path d="M10 0 H486 L657 175 L461 370 L369 280 L457 194 L395 136 H144 Z"/>
+    </clipPath>
+    <clipPath id="leftShape">
+      <path d="M0 398 L249 164 L342 247 L0 580 Z"/>
+    </clipPath>
+    <clipPath id="rightShape">
+      <path d="M238 408 L342 300 L655 602 H445 Z"/>
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#topShape)">
+    <rect x="0" y="0" width="660" height="380" fill="url(#top)"/>
+    <path d="M10 0 H270 L144 136 Z" fill="url(#facetBlue)"/>
+    <path d="M270 0 H400 L342 72 L270 136 L144 136 Z" fill="#60A5FA" opacity=".10"/>
+    <path d="M270 0 H486 L342 72 Z" fill="#38BDF8" opacity=".12"/>
+    <path d="M342 72 L486 0 L486 136 L395 136 Z" fill="#818CF8" opacity=".14"/>
+    <path d="M486 0 L657 175 L526 175 L486 136 Z" fill="#8B5CF6" opacity=".20"/>
+    <path d="M486 136 L657 175 L461 370 L461 194 Z" fill="url(#facetPurple)"/>
+    <path d="M395 136 L486 136 L461 194 L369 280 L369 210 Z" fill="#6366F1" opacity=".13"/>
+    <path d="M461 194 L526 175 L461 280 L369 280 Z" fill="#C084FC" opacity=".13"/>
+    <path d="M369 280 L461 280 L461 370 Z" fill="#7C3AED" opacity=".12"/>
+  </g>
+
+  <g clip-path="url(#leftShape)">
+    <rect x="0" y="160" width="350" height="430" fill="url(#blue)"/>
+    <path d="M0 398 L249 164 L210 290 L0 470 Z" fill="url(#facetBlue)"/>
+    <path d="M249 164 L342 247 L210 290 Z" fill="#38BDF8" opacity=".12"/>
+    <path d="M0 470 L210 290 L180 405 L0 580 Z" fill="#1D4ED8" opacity=".12"/>
+    <path d="M210 290 L342 247 L180 405 Z" fill="#1E40AF" opacity=".12"/>
+  </g>
+
+  <g clip-path="url(#rightShape)">
+    <rect x="230" y="295" width="430" height="310" fill="url(#purple)"/>
+    <path d="M238 408 L342 300 L445 420 L342 420 Z" fill="#6366F1" opacity=".12"/>
+    <path d="M342 300 L445 420 L655 602 H445 Z" fill="url(#facetPurple)"/>
+    <path d="M342 420 L445 420 L445 602 Z" fill="#A855F7" opacity=".10"/>
+    <path d="M445 420 L655 602 H445 Z" fill="#C084FC" opacity=".12"/>
+  </g>
+</svg>
