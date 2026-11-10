@@ -1,0 +1,51 @@
+# 00. Decisions
+
+Each row is a decision the build relies on. "Owner" means the project owner (EswaranS-06). Newer decisions go at the bottom. A reversed decision is marked `Superseded by D-xx`, never deleted.
+
+## Product
+
+| ID | Date | Decision | Source |
+| --- | --- | --- | --- |
+| D-01 | 10 Nov 2026 | The app is named **Comply**. | Owner |
+| D-02 | 10 Nov 2026 | One firm per installation. The Firm table exists so several firms are possible later; there are no firm-management screens. | Owner |
+| D-03 | 10 Nov 2026 | Version 1 includes all Must features plus these Should features: F5 (Phase 1 checklist), F13 (coverage dashboard), F17 (test catalogue editing), F19 (evidence), F20 (audit log), F21 (system security review), F23 and F24 (client access). | Owner |
+| D-04 | 10 Nov 2026 | **F22 (vendor, client and activity duties) is dropped from version 1.** Its design is unfinished. | Owner |
+| D-05 | 10 Nov 2026 | **Processor (vendor) logins are dropped from version 1.** Vendors are records, not users. | Owner |
+| D-06 | 10 Nov 2026 | Client users do log in during version 1. There is **one sign-in page for every role**; the role decides what opens after sign-in. | Owner |
+| D-07 | 10 Nov 2026 | The firm admin gets a full administration area to manage clients, each client's employees (client users) and firm users. This is a first-class part of the product, not an afterthought. | Owner |
+| D-08 | 10 Nov 2026 | Only a reviewer or admin can sign off and lock an assessment. An assessor can never sign off their own work. | Owner (accepts Notion recommendation) |
+| D-09 | 10 Nov 2026 | Client contributors only enter facts. They never see legal tests, routes or outcomes. | Owner (accepts Notion recommendation) |
+| D-10 | 10 Nov 2026 | A client viewer sees shared findings only after the assessment is signed off. | Owner (accepts Notion recommendation) |
+| D-11 | 10 Nov 2026 | The Excel workbooks are the source of truth for catalogue content, test wording, column layouts and the Auklet School demo. The owner uploads them to `/srv/comply/source-workbooks/`. Nothing that depends on them is invented. | Owner |
+
+## Technology
+
+| ID | Date | Decision | Source |
+| --- | --- | --- | --- |
+| D-20 | 10 Nov 2026 | Stack: TypeScript, Next.js, PostgreSQL, Prisma, ExcelJS, Docker Compose. | Owner (accepts Notion proposal) |
+| D-21 | 10 Nov 2026 | **The app must load fast.** Speed is a requirement with a measured budget (see 04, "Performance budget"), checked before every release. | Owner |
+| D-22 | 10 Nov 2026 | Sign-in is email and password. Password reset uses a signed, short-lived, single-use JWT link. All traffic is HTTPS. | Owner |
+| D-23 | 10 Nov 2026 | Reset and invite links are delivered two ways: by email, and as a link the admin can copy. **Mailpit** is the mail server in development and on the sandbox. | Owner |
+| D-24 | 10 Nov 2026 | Lockout after failed tries, strong password policy, idle session timeout and optional TOTP MFA are all built, and **each one is switchable and adjustable from the admin area**. | Owner |
+| D-25 | 10 Nov 2026 | Evidence files are stored in **MinIO** (S3-compatible), compressed then encrypted before upload, to save space and protect personal data. | Owner |
+| D-26 | 10 Nov 2026 | Target host is the owner's own Linux server or VPS in an India region. The setup must stay a portable Docker Compose project that runs unchanged on the sandbox, a laptop and the server. | Owner |
+| D-27 | 10 Nov 2026 | Desktop first. Tablets are usable. Phones can sign in and read findings; data tables are not optimised for phones. | Owner |
+| D-28 | 10 Nov 2026 | Fonts are self-hosted. The app makes no request to Google Fonts or any other third-party host at run time. | Claude (speed, and client data stays in one place) |
+
+## Design
+
+| ID | Date | Decision | Source |
+| --- | --- | --- | --- |
+| D-30 | 10 Nov 2026 | The only theme is REX (`/data/home/REX`): its palette, fonts, tokens and diagonal-cut motif. No other colours or typefaces. | Owner |
+| D-31 | 10 Nov 2026 | Dark is the default; each user can switch to the REX light variant. The choice is remembered per user. | Owner |
+| D-32 | 10 Nov 2026 | Design skills are kept in `/.skills` and committed. Every use of a skill is written to `16-skills-log.md`. | Owner |
+
+## Process
+
+| ID | Date | Decision | Source |
+| --- | --- | --- | --- |
+| D-40 | 10 Nov 2026 | Git is local only. Commits carry only `EswaranS-06 <eswaransk06@gmail.com>`; no co-author or tool attribution lines. | Owner |
+| D-41 | 10 Nov 2026 | Two branches. `main` is the timeline of working versions and sub-versions and holds no `/docs` or `/.skills`. `forge` is the always-current build branch and holds everything. | Owner (branch name chosen by Claude) |
+| D-42 | 10 Nov 2026 | `/docs` is updated whenever the build departs from the plan. | Owner |
+| D-43 | 10 Nov 2026 | No extra backup is made. The owner handles backup of the sandbox. | Owner |
+| D-44 | 10 Nov 2026 | If the sandbox stops, wait 5 to 20 minutes and reconnect; it restarts by itself and work continues from the last commit. | Owner |
