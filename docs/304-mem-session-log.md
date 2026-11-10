@@ -43,3 +43,5 @@ Append-only. One entry per working session, newest at the bottom. Say what was d
 **Left at end of session:** nothing in progress. Waiting for the owner's go-ahead to start S0. See 302.
 
 Commits on `forge` this session, oldest first: initial commit (shared with `main`); release script; skills; project documents; agent notes; workbook update; memory files.
+
+**13. Outline demo (owner asked, 10 Nov).** Wrote `demo/index.html`: one plain black-and-white page with sample data and JS showing the flow (sign in, clients, assessment, result). Its result logic is a simplified stand-in, not the rules engine. Served with `python3 -m http.server 3000 --directory /srv/comply/demo` (a plain background process; it does not survive a sandbox stop, restart it with the same command) and published with `instabox-port publish 3000` (public link). Owner will look at it at 10:00 on 11 Nov. The real build is still on hold. `demo/` must be removed or excluded before the first release so it does not reach `main`.
