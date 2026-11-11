@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Comply: outline demo</title>
+<style>
+  body { background: #fff; color: #000; font-family: Arial, sans-serif; margin: 24px; max-width: 900px; }
+  h1, h2 { margin: 0 0 12px; }
+  nav { margin: 16px 0; }
+  button, input, select { font: inherit; color: #000; background: #fff; border: 1px solid #000; padding: 6px 10px; }
+  nav button.on { background: #000; color: #fff; }
+  section { border: 1px solid #000; padding: 16px; }
+  table { border-collapse: collapse; width: 100%; margin: 12px 0; }
+  th, td { border: 1px solid #000; padding: 6px 8px; text-align: left; }
+  label { display: block; margin: 8px 0; }
+  .note { border: 1px dashed #000; padding: 8px; margin-top: 16px; font-size: 13px; }
+</style>
+</head>
+<body>
+<h1>Comply</h1>
+<div>Outline demo. No theme, sample data only, nothing is saved.</div>
+
+<nav id="nav"></nav>
+<section id="view"></section>
+
+<div class="note">
+  This page only shows the flow: sign in, pick a client, record processing activities, see the result.
+  The result logic here is a simplified stand-in for the real rules engine.
+</div>
+
+<script>
+var state = {
+  step: 0,
+  user: null,
+  client: null,
+  clients: [
+    { name: "Quellmark Finance Ltd", sector: "Digital lending (NBFC)", status: "In progress", activities: [
+      { name: "Loan servicing and repayment", route: "Consent (Sec 6)", consent: "Captured" },
+      { name: "Marketing and cross-sell", route: "Consent (Sec 6)", consent: "" },
+      { name: "Fraud detection and device analytics", route: "None identified", consent: "" }
+    ] },
+    { name: "Halvorn Systems Pvt Ltd", sector: "Payroll and HR software", status: "In progress", activities: [
+      { name: "Payroll processing for customers", route: "Out of scope", consent: "" },
+      { name: "Salary benchmarking", route: "None identified", consent: "" },
+      { name: "Own staff HR", route: "Legitimate use (Sec 7)", consent: "" }
+    ] },
+    { name: "Brannock Auto Components Pvt Ltd", sector: "Manufacturing and export", status: "Not started", activities: [
+      { name: "Permanent staff HR and payroll", route: "Legitimate use (Sec 7)", consent: "" },
+      { name: "Group reporting to parent", route: "None identified", consent: "" },
+      { name: "Driver and fleet tracking", route: "Consent (Sec 6)", consent: "Not captured" }
+    ] }
+  ]
+};
+var steps = ["1. Sign in", "2. Clients", "3. Assessment", "4. Result"];
+var routes = ["Consent (Sec 6)", "Legitimate use (Sec 7)", "Exemption only (Sec 17)", "Out of scope", "None identified"];
+
+// Simplified stand-in for the rules engine.
+function outcome(a) {
+  if (a.route === "None identified") return "Gap: no legal basis";
+  if (a.route === "Out of scope") return "Out of scope: record reason";
+  if (a.route === "Consent (Sec 6)") {
+    if (a.consent === "") return "Cannot conclude yet";
+    if (a.consent === "Not captured") return "Gap: consent not captured";
+  }
+  return "No gap found";
+}
+
+function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+function go(n) { if (n > 0 && !state.user) n = 0; if (n > 1 && !state.client) n = 1; state.step = n; render(); }
+
+function render() {
+  document.getElementById("nav").innerHTML = steps.map(function (s, i) {
+    return '<button class="' + (i === state.step ? "on" : "") + '" onclick="go(' + i + ')">' + s + "</button>";
+  }).join(" ");
+  var v = document.getElementById("view");
+
+  if (state.step === 0) {
+    v.innerHTML = '<h2>Sign in</h2>' +
+      '<label>Email <input id="email" value="consultant@example.com"></label>' +
+      '<label>Password <input id="pw" type="password" value="demo"></label>' +
+      '<button onclick="signIn()">Sign in</button>';
+  }
+
+  if (state.step === 1) {
+    v.innerHTML = '<h2>Clients</h2><div>Signed in as ' + esc(state.user) + '</div>' +
+      '<table><tr><th>Client</th><th>Sector</th><th>Status</th><th></th></tr>' +
+      state.clients.map(function (c, i) {
+        return "<tr><td>" + esc(c.name) + "</td><td>" + esc(c.sector) + "</td><td>" + esc(c.status) +
+          '</td><td><button onclick="openClient(' + i + ')">Open</button></td></tr>';
+      }).join("") + "</table>";
+  }
+
+  if (state.step === 2) {
+    v.innerHTML = '<h2>Assessment: ' + esc(state.client.name) + '</h2>' +
+      '<table><tr><th>Processing activity</th><th>Legal route</th><th>Consent status</th><th>Result</th><th></th></tr>' +
+      state.client.activities.map(function (a, i) {
+        return "<tr><td>" + esc(a.name) + "</td><td>" + esc(a.route) + "</td><td>" + esc(a.consent || "-") +
+          "</td><td>" + outcome(a) + '</td><td><button onclick="removeRow(' + i + ')">Remove</button></td></tr>';
+      }).join("") + "</table>" +
+      "<h2>Add activity</h2>" +
+      '<label>Processing activity <input id="aName" placeholder="e.g. Fee collection"></label>' +
+      '<label>Legal route <select id="aRoute">' + routes.map(function (r) { return "<option>" + r + "</option>"; }).join("") + "</select></label>" +
+      '<label>Consent status <select id="aConsent"><option value="">(blank)</option><option>Captured</option><option>Not captured</option></select></label>' +
+      '<button onclick="addRow()">Add</button> <button onclick="go(3)">See result</button>';
+  }
+
+  if (state.step === 3) {
+    var counts = {};
+    state.client.activities.forEach(function (a) { var o = outcome(a); counts[o] = (counts[o] || 0) + 1; });
+    v.innerHTML = '<h2>Result: ' + esc(state.client.name) + '</h2>' +
+      "<div>" + state.client.activities.length + " activities assessed</div>" +
+      "<table><tr><th>Result</th><th>Count</th></tr>" +
+      Object.keys(counts).map(function (k) { return "<tr><td>" + k + "</td><td>" + counts[k] + "</td></tr>"; }).join("") +
+      "</table>" +
+      '<button onclick="go(2)">Back to assessment</button> <button onclick="alert(\'The real app exports an Excel workbook here.\')">Export to Excel</button>';
+  }
+}
+
+function signIn() {
+  var e = document.getElementById("email").value.trim();
+  if (!e || !document.getElementById("pw").value) { alert("Enter email and password"); return; }
+  state.user = e; go(1);
+}
+function openClient(i) { state.client = state.clients[i]; go(2); }
+function addRow() {
+  var n = document.getElementById("aName").value.trim();
+  if (!n) { alert("Enter the activity name"); return; }
+  state.client.activities.push({ name: n, route: document.getElementById("aRoute").value, consent: document.getElementById("aConsent").value });
+  render();
+}
+function removeRow(i) { state.client.activities.splice(i, 1); render(); }
+
+render();
+</script>
+</body>
+</html>
