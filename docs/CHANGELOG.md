@@ -25,7 +25,7 @@ Newest first. One line per change: what changed, in which document, and why.
 - 10: rewritten for four workbooks; export now fills the template; parity warnings compare computed values with the workbook's cached values.
 - 02: A8 (organisation profile and departments) added; F3, F4, F5, F6, F7, F11, F12, F14, F15, F16, F21 reworded to the workbook's logic.
 - 09: Organisation screens added; checklist and legal basis screens updated; security review screen marked not designed.
-- 14: workbook dependencies removed from S2 to S7; S2 gains `v0.2.3` (organisation profile, seed script) and the catalogue moves to `v0.2.4`; other workbooks join import and export in the stage that builds their screens; S5 exit check split so only the Auklet totals wait for the demo; S8 notes F21 is blocked.
+- 14: workbook dependencies removed from S2 to S7; S2 gains `v0.2.3` (organisation profile, seed script) and the catalogue moves to `v0.2.4`; other workbooks join import and export in the stage that builds their screens; S5 exit check split so only the demo totals wait for the demo; S8 notes F21 is blocked.
 - 15: O-3 to O-7, O-9, O-11 closed; O-1 narrowed to the missing demo data; O-8 raised to blocking; O-22 to O-36 added.
 - 00: D-11 updated; D-12 to D-15 added.
 - 12: parity test split into three parts; template hygiene test added.
