@@ -52,7 +52,7 @@ Choices made from the workbooks where they were silent or differed from Notion. 
 
 | # | Item | Status |
 | --- | --- | --- |
-| O-32 | **A real client name is in a file described as clean.** Workbook 3, Owners sheet: a real client name, document ID a real document ID. | The Excel files are kept out of git. Templates committed for export are cleaned first and a test guards against the name (10, 12) |
+| O-32 | **A real client name is in a file described as clean.** Workbook 3, Owners sheet: a real client name, document ID a real document ID. | The Excel files are kept out of git. Templates committed for export are cleaned first and a test guards against the name (10, 12). On 11 Nov 2026, before the repository was made public, the name was also removed from all documents and all history (D-48) |
 | O-33 | The same workbooks sit untracked inside the owner's REX brand repository (`/data/home/REX/DPDP-Workbooks`) and in `/data/home/DPDP-Workbooks-Clean.zip`. A `git add .` in the REX repository would commit them there | Owner's call; nothing was changed in that repository |
 
 ## Risks accepted for version 1

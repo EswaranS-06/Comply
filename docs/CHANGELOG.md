@@ -2,6 +2,12 @@
 
 Newest first. One line per change: what changed, in which document, and why.
 
+## 11 Nov 2026 (later): public repository
+
+- D-48: the remote is the public repo `EswaranS-06/Comply`; all branches and tags pushed. D-40, 13, 301, 303 and `CLAUDE.md` changed from "never push" to "push only when told; never force-push".
+- A real client name and document ID found in 10, 15, 17 and 304 were removed from the files and from all history before the push (15, O-32).
+- 302, 303, 304, 305 brought up to date for the end of session 2.
+
 ## 11 Nov 2026: demo clients, Excel exchange, plain theme
 
 - 18 (new) and `demo-clients/` (new): three fictional demo clients from the owner (Quellmark Finance, Halvorn Systems, Brannock Auto Components) replace the earlier single demo client as demo data and acceptance case (D-46). Every mention of the earlier client was removed from 00, 01, 04, 06, 12, 14, 15, 17 and the memory files.

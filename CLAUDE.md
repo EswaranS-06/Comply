@@ -21,7 +21,7 @@ Working memory is kept in `docs/300-mem-*.md` and up, not in chat history or a p
 
 ## Rules
 
-- Git is local only. Commit as the configured user (`EswaranS-06`). Never add a `Co-Authored-By` line or any tool attribution. Never push or add a remote unless told to.
+- Git is local only. Commit as the configured user (`EswaranS-06`). Never add a `Co-Authored-By` line or any tool attribution. The remote `origin` is the public repo `EswaranS-06/Comply` (D-48): push only when told to, never force-push. `docs/` and `.skills/` are public there, so never put secrets, real client names or client data in any file.
 - Work on `forge`. Never commit to `main` by hand; release with `scripts/release.sh vX.Y.Z "summary"` after `pnpm verify` passes. `main` must not contain `docs`, `.skills` or this file.
 - When the build departs from a document in `docs/`, change the document in the same commit and add a line to `docs/CHANGELOG.md`.
 - Visual design comes only from REX: `.skills/rex-brand` and `.skills/rex-website`. Copy token values; do not retype or invent colours or fonts.

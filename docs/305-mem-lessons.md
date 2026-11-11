@@ -63,3 +63,5 @@ Things that were non-obvious or cost time. Add to this whenever something surpri
 | L-30 | The demo client files are descriptions, not workbooks: answers are given by exception, some rows stand for many records, and one file's summary table disagrees with its own detail table. Follow the detail table and list the difference in 15 |
 | L-31 | Installing a system service (`sudo` writing under `/etc/systemd`) was refused by the permission check. The outline demo runs as a plain background process and must be restarted by hand after a sandbox stop (303) |
 | L-32 | `instabox-port publish 3000` without `--private` gives a public link. Say so when publishing |
+| L-33 | Before a repository is made public, scan the whole history, not only the tree, for client names and secrets (`git grep ... $(git rev-list --all)`). Removing a name from the latest commit does not remove it from earlier ones. Redaction rewrites history, so do it before the first push, never after |
+| L-34 | The model, effort and plugin modes (ponytail lite, full, ultra) are session settings. They are not project rules and are not recorded as instructions |

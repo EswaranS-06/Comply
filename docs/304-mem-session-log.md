@@ -57,3 +57,7 @@ Commits on `forge` this session, oldest first: initial commit (shared with `main
 **4. Phase 4.** The demo client files show the five security items and the result words, which narrows O-8. Not treated as settled.
 
 **Left at end of session:** nothing in progress. Build still on hold. The outline demo is still served on port 3000 (see 302).
+
+**5. Review.** Ran a read-only review of the last three commits. One real finding: `scripts/release.sh` does not exclude `demo/`, so the first release would publish it on `main`. Not fixed yet; recorded in 302.
+
+**6. Memory check and first push (owner, 11 Nov).** The owner is deleting this session and starting a new one, and asked for the memory to be checked and a public repo `Comply` to be created with all branches pushed. Memory was re-read against the repository and corrected (302, 303, 301 I-24, 13, CLAUDE.md, D-48). Before publishing, a scan found a real client name in four docs and in older commits; it was removed from the files and from all history of `forge`, then `origin` was created and `main`, `forge` and tags pushed. The earlier demo client name stays in old commits by the owner's choice.

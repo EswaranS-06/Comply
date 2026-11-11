@@ -48,7 +48,7 @@ Each row is a decision the build relies on. "Owner" means the project owner (Esw
 
 | ID | Date | Decision | Source |
 | --- | --- | --- | --- |
-| D-40 | 10 Nov 2026 | Git is local only. Commits carry only `EswaranS-06 <eswaransk06@gmail.com>`; no co-author or tool attribution lines. | Owner |
+| D-40 | 10 Nov 2026 | Git is local only. Commits carry only `EswaranS-06 <eswaransk06@gmail.com>`; no co-author or tool attribution lines. **Pushing is allowed from 11 Nov 2026 (D-48); the author and no-attribution rules still apply.** | Owner |
 | D-41 | 10 Nov 2026 | Two branches. `main` is the timeline of working versions and sub-versions and holds no `/docs` or `/.skills`. `forge` is the always-current build branch and holds everything. | Owner (branch name chosen by Claude) |
 | D-42 | 10 Nov 2026 | `/docs` is updated whenever the build departs from the plan. | Owner |
 | D-43 | 10 Nov 2026 | No extra backup is made. The owner handles backup of the sandbox. | Owner |
@@ -56,3 +56,4 @@ Each row is a decision the build relies on. "Owner" means the project owner (Esw
 | D-45 | 11 Nov 2026 | **Plain interim theme.** Until the functionality is good, every screen is white background, black lines and black text. Colour is added only where it is needed to indicate something (a status, an error). The REX theme (D-30, dark default with light toggle) is applied afterwards, when the owner says so. Details in 08. | Owner |
 | D-46 | 11 Nov 2026 | The earlier single demo client is removed from the project. Demo data and the acceptance case are three fictional clients supplied by the owner: Quellmark Finance, Halvorn Systems, Brannock Auto Components. Their files are in `docs/demo-clients/`; summary and expected outcomes in 18. | Owner |
 | D-47 | 11 Nov 2026 | Excel import and export are available on every screen that holds sheet data (F30), and one Excel page handles the whole assessment (F31). Every import first checks sheet names and headers against a single sheet map and stops with an error when one is missing. Plan in 19. | Owner |
+| D-48 | 11 Nov 2026 | A public GitHub repository named `Comply` under the owner's account `EswaranS-06` is the remote (`origin`). All branches and tags are pushed to it, so `docs` and `.skills` on `forge` are public too. Before the push, the real client name found in the workbook was removed from every file and from all history (15, O-32). Pushing later still needs an owner instruction each time, except for the release flow if the owner says so. | Owner |

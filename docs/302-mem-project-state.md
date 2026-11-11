@@ -2,7 +2,7 @@
 
 **Keep this file true. Update it before stopping, every session.**
 
-Last updated: 11 Nov 2026.
+Last updated: 11 Nov 2026 (end of session 2).
 
 ## Where things stand
 
@@ -14,6 +14,8 @@ Last updated: 11 Nov 2026.
 | Last release on `main` | None. `main` holds only the initial commit (README, `.gitignore`) |
 | Next release | `v0.0.1` (first sub-version of S0) |
 | Working branch | `forge` |
+| Remote | `origin` = https://github.com/EswaranS-06/Comply, **public**. `main`, `forge` and the tags were pushed on 11 Nov 2026 (D-48). Push again only when the owner says so |
+| Model and mode | The owner switched the session to Sonnet 5.5 with the ponytail plugin at `ultra` on 11 Nov 2026 (plugin setting, not a project rule) |
 | Who builds | Claude Sonnet as the main agent; a stronger model as a subagent where needed (301, I-16) |
 | Look of the build | Plain: white background, black lines and text; colour only where needed (D-45, 08). REX theme later |
 
@@ -34,8 +36,8 @@ Nothing else. No `package.json`, no Compose file, no database.
 
 - One plain HTML page with inline JS and sample data: sign in, clients (the three demo clients), assessment, result. Its result logic is a stand-in, not the rules engine.
 - Served by `python3 -m http.server 3000 --directory /srv/comply/demo` as a background process. It does **not** restart after a sandbox stop; run the same command again.
-- Published with `instabox-port publish 3000`. The link is public: `https://3000-agq4l32547iaphxs7bq2l5ie6q.instabox.tech`. Close it with `instabox-port unpublish 3000`.
-- **`demo/` must be removed, or excluded in `scripts/release.sh`, before the first release**, or it reaches `main`. Port 3000 is also the app's dev port: stop the demo server before `pnpm dev`.
+- It was published with `instabox-port publish 3000` (public link) on 10 Nov, but on 11 Nov `instabox-port list` showed no published ports while the server still listened locally. To show it again: `instabox-port publish 3000` (add `--private` for a private link).
+- **`demo/` must be removed, or added to `EXCLUDE` in `scripts/release.sh` (line 12), before the first release**, or it reaches `main`. Port 3000 is also the app's dev port: stop the demo server before `pnpm dev`.
 
 ## The next step, when the owner says go
 
@@ -67,5 +69,7 @@ Stages S0 to S7 and S9, and most of S8, can be built with what is in the reposit
 
 - `/srv/comply` ownership changed from `root` to `user` (10 Nov 2026).
 - Claude Code plugin `ponytail@ponytail` 5.3.3 installed for the `user` account, marketplace `DietrichGebert/ponytail` (10 Nov 2026).
-- Port 3000 published through Instabox, public (10 Nov 2026).
+- Port 3000 was published through Instabox on 10 Nov 2026; not published at the end of 11 Nov (see above).
+- GitHub: public repository `EswaranS-06/Comply` created and pushed with `gh` (11 Nov 2026).
+- Git history of `forge` was rewritten once on 11 Nov 2026, before the first push, to remove a real client name (commit hashes changed; D-48).
 - Nothing was changed in `/data/home/REX`.

@@ -13,7 +13,7 @@ Each is given as the owner said it (lightly trimmed), then what it means in prac
 
 | # | Date | Owner said | Means |
 | --- | --- | --- | --- |
-| I-1 | 10 Nov 2026 | "you are going to only use git in local to commit in git No co-author claude and only my name" | Local git only. Never push or add a remote. No `Co-Authored-By` or any tool attribution in commits. Identity is already configured; do not change git config |
+| I-1 | 10 Nov 2026 | "you are going to only use git in local to commit in git No co-author claude and only my name" | Local git only until 11 Nov 2026 (then see I-24). No push without an instruction. No `Co-Authored-By` or any tool attribution in commits. Identity is already configured; do not change git config |
 | I-2 | 10 Nov 2026 | "`main` you create a own timeline & plan ... everytime you cover each phase create a version also create sub versions then keep the completely working versions/sub-verisons in the `main` this exculdes the `/docs` & `/.skills`" | `main` = only verified working versions, tagged, without `docs`, `.skills`, `CLAUDE.md`. Use `scripts/release.sh`. See 13 |
 | I-3 | 10 Nov 2026 | "another branch which have the upto date branch never checked just build and working this have the `/docs` & `/.skills`" | `forge` = the working branch with everything. Commit there freely |
 | I-4 | 10 Nov 2026 | "if anything changes while building no issues just write the `/docs` bcz not every goes as plan" | Deviating from the plan is fine. Not recording the deviation is not. Update the document and the changelog in the same commit |
@@ -36,11 +36,12 @@ Each is given as the owner said it (lightly trimmed), then what it means in prac
 | I-21 | 11 Nov 2026 | "remove anything related to [the earlier demo client] ... and have these three client for demos" | The earlier demo client must not appear anywhere in the repository, including history notes. The demo clients are Quellmark Finance, Halvorn Systems and Brannock Auto Components (18) |
 | I-22 | 11 Nov 2026 | "everywhere you can either export or import the excel sheet ... one page where we can export and import the excel sheet where you check the sheet name and map the headers that should exist in the excel if not you can throw error plan this and create md" | Excel import and export on every screen plus one Excel page; sheet names and headers checked against a map; errors when missing. Planned in 19; not built |
 | I-23 | 11 Nov 2026 | "until a good functionality we go with the current theme which is White BG and Black Lines and fonts, for indication and other things if needed we add colors" | Build plain: white background, black lines and text. Colour only where needed to indicate something. REX theme later (D-45, 08) |
+| I-24 | 11 Nov 2026 | "check the memory is everything up to date ... create new public remote (repo) in my account name is `Comply` and push all the branches and details that's it" | Memory checked and updated. Public GitHub repo `EswaranS-06/Comply` created as `origin`; `main`, `forge` and tags pushed. This replaces the local-only rule in I-1 for this push. The real client name was removed from all history before pushing. The owner also said to leave the earlier demo client name in history (answer on 11 Nov); it is therefore still in old commits and now public |
 
 ## Preferences observed (not stated outright)
 
 - Wants things committed, not left in the working tree.
-- Chose "Nothing extra" for backup: do not create bundles, snapshots or remotes unprompted. Mentioning the sandbox expiry risk once is enough; do not nag.
+- Chose "Nothing extra" for backup: do not create bundles, snapshots or remotes unprompted (on 11 Nov 2026 the owner themself asked for a public repo, I-24). Mentioning the sandbox expiry risk once is enough; do not nag.
 - Accepts recommended defaults quickly when the reasoning is given in one line.
 - Wants a "Yes / go" button to mean exactly what was offered, nothing more.
 - No emojis in project files (a REX brand rule from the owner's own `memory.md`).
@@ -51,7 +52,7 @@ Each is given as the owner said it (lightly trimmed), then what it means in prac
 - Anything that changes scope (adding or dropping a feature).
 - Anything touching real client data.
 - Anything outside `/srv/comply` (the owner's REX repository, the machine's global config).
-- Anything that pushes, publishes or sends data off the machine.
+- Anything that pushes, publishes or sends data off the machine (the owner allowed one push on 11 Nov 2026, I-24; ask again for later pushes).
 
 ## What not to ask about
 

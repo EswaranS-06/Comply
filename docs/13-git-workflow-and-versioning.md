@@ -2,7 +2,7 @@
 
 ## Ground rules (D-40)
 
-- Git is used locally only. Nothing is pushed, and no remote is added, unless the owner says so.
+- Work is committed locally. The remote `origin` is the public repository `EswaranS-06/Comply` (D-48). Push only when the owner says so; push `main`, `forge` and the tags together. Never force-push.
 - Every commit is authored by `EswaranS-06 <eswaransk06@gmail.com>` (already set in the global git config). No `Co-Authored-By` line and no tool attribution of any kind.
 - One commit per logical change, with a plain message: what changed, and why if it is not obvious.
 

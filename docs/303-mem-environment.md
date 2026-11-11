@@ -11,6 +11,9 @@ Checked on 10 Nov 2026. Re-check with the commands at the bottom if something lo
 - **SSH access expires about 17 Nov 2026** (seven days from 10 Nov, per the owner).
 - Both disks survive a stop. A stop ends every process, including Docker containers.
 
+- Git remote: `origin` = https://github.com/EswaranS-06/Comply (public). Because it exists, losing the sandbox no longer loses the work, as long as it was pushed (D-48).
+- The outline demo server (`demo/`, port 3000) was running on 11 Nov but port 3000 was no longer published (`instabox-port list` empty). Restart and republish as in 302 if needed.
+
 ## If the sandbox stops (owner's instruction, 301 I-14)
 
 1. Wait 5 to 20 minutes and reconnect; it starts again by itself.
@@ -34,7 +37,7 @@ Checked on 10 Nov 2026. Re-check with the commands at the bottom if something lo
 | Tool | Version | Note |
 | --- | --- | --- |
 | git | 2.47 | Global identity set to the owner |
-| gh | present, signed in as `EswaranS-06` | **Do not use to push or create anything** (301 I-1) |
+| gh | present, signed in as `EswaranS-06` (scopes: repo, workflow, gist, read:org) | Used on 11 Nov 2026 to create the public repo `Comply` (301 I-24). Push only when the owner says so |
 | Node | 22 | |
 | pnpm | 12 | Package manager for the project |
 | npm, bun | present | Not used |
