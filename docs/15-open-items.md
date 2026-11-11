@@ -6,9 +6,9 @@ Things that are missing, unverified or at risk. Each is closed by a decision in 
 
 | # | Item | Blocks | Needed from |
 | --- | --- | --- | --- |
-| O-1 | **The filled Auklet School demo workbooks are missing.** The four files supplied are empty templates with one sample activity. | Only the final parity check (1 Supported, 3 Gap, 2 Gap: no legal basis, 2 Cannot conclude yet) in S5 and the `v1.0.0` gate. Nothing else waits for it | Owner |
+| O-1 | **Demo and acceptance data.** Settled on 11 Nov 2026 by the three fictional clients in 18 (D-46). They are written descriptions, not filled workbooks, so the fixtures are keyed in by hand and no Excel-cached values exist to compare against. | Nothing. See O-37 and O-38 for what remains | -- |
 | O-2 | **Sandbox access ends around 17 Nov 2026**, about halfway through the plan. No backup is made (D-43) and nothing is pushed. | Everything after that date | Owner: extend the sandbox, or move the repository before then |
-| O-8 | **The Phase 4 system security review (F21) is not defined anywhere.** Workbook 4 says it is outside its scope. Notion describes "Rule 6 items (a) to (e), five rows per system", but the Security Controls sheet lists seven Rule 6 items (Encryption or masking, Access control, Logging and monitoring, Backup and continuity, Log retention (1 year), Processor contract, Other measures). Needed: the five items, what "client says" is built from, and the Pass / Partial / Gap / Not tested matrix. | `v0.8.1` in S8 | Owner |
+| O-8 | **The Phase 4 system security review (F21) is not defined anywhere.** Workbook 4 says it is outside its scope. Notion describes "Rule 6 items (a) to (e), five rows per system", but the Security Controls sheet lists seven Rule 6 items (Encryption or masking, Access control, Logging and monitoring, Backup and continuity, Log retention (1 year), Processor contract, Other measures). Needed: the five items, what "client says" is built from, and the Pass / Partial / Gap / Not tested matrix. **Narrowed on 11 Nov 2026:** section 13 of each demo client file (18) shows five items per system, (a) Encryption, (b) Access control, (c) Access logs, (d) Backup, (e) Log retention of 12 months or more, as "client says / evidence seen / result", with results Pass, Partial, Gap (client confirms), Gap: claim not supported, Not tested. Still needed: the owner's confirmation that this is the design, and the full matrix from the two inputs to the result. | `v0.8.1` in S8 | Owner |
 
 ## For the owner to confirm
 
@@ -25,6 +25,13 @@ Choices made from the workbooks where they were silent or differed from Notion. 
 | O-10 | Finding IDs use `LB-` for every phase. The workbook's Finding ID has no format, and Notion names `LB-` only | 05 |
 | O-27 | Findings can point to a system or vendor (Notion F18) although the workbook's Findings sheet only has an Activity ID | 05 |
 | O-28 | Open element checks (E1 or E2 blank or Not sure) do not make an activity "Cannot conclude yet", because the workbook formula does not count them. They are listed on the coverage dashboard instead | 06 R-7 |
+| O-37 | Brannock's expected totals: the file's opening table (4 Supported, 2 Gap, 1, 1, 2 Out of scope) differs from its section 12 (6, 3, 1, 1, 1). The build follows section 12 | 18 |
+| O-38 | The optional extra rows ACT-008b and ACT-007b (Halvorn) are not loaded; Brannock's ACT-008b is loaded because its section 12 counts it. The "b" rows get ordinary ACT numbers | 18 |
+| O-39 | Excel structure check: every expected header must be present, not only the mandatory ones; a missing one is an error | 19, 10 |
+| O-40 | Unknown extra columns and sheets are ignored and reported as notes, not errors | 19 |
+| O-41 | A single-sheet export holds that sheet plus the reference sheets its dropdowns need | 19 |
+| O-42 | A sheet import may not refer to records that are not yet in Comply; the message names the sheet to import first | 19 |
+| O-43 | Which colours, if any, mark statuses under the plain interim theme, and when the REX theme is switched on | 08 |
 
 ## To confirm in Excel during the build
 

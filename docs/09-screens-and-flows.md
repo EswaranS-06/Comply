@@ -41,7 +41,7 @@ No wireframes were supplied; this list is the agreed starting point and is refin
 | New client / assessment | dialog | F2 |
 | Assessment home (coverage dashboard) | `/assessments/[id]` | F13: what is missing, counts by outcome, quick links to the rows |
 | Members | `/assessments/[id]/members` | Who is assessor and reviewer |
-| Import / export | `/assessments/[id]/excel` | Upload, preview of problems, confirm; export buttons; import history |
+| Excel (import / export) | `/assessments/[id]/excel` | F31: one page for every sheet and workbook. Upload, structure check of sheet names and headers, preview of problems, confirm; export all, per workbook or per sheet; header map viewer; history. Every list screen also carries Export sheet and Import sheet (F30). Layout in 19 |
 
 ### Organisation
 

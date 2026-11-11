@@ -15,7 +15,7 @@
 
 ## Tests that must always exist
 
-1. **Workbook parity.** (a) Every rule in 06 has table-driven unit tests written from the workbook formulas, one case per branch, asserting the exact result text. (b) Import compares Comply's computed values with the values cached in the workbook's auto columns and must report no parity warning for the sample activity. (c) Auklet School: outcomes are exactly 1 Supported, 3 Gap, 2 Gap: no legal basis, 2 Cannot conclude yet, and each activity matches the workbook. Part (c) is added when the filled demo workbooks are supplied; (a) and (b) do not wait for it.
+1. **Workbook parity.** (a) Every rule in 06 has table-driven unit tests written from the workbook formulas, one case per branch, asserting the exact result text. (b) Import compares Comply's computed values with the values cached in the workbook's auto columns and must report no parity warning for the sample activity. (c) The three demo clients (18): each activity's outcome matches section 12 of the client's file, and the totals are Quellmark 4 Supported, 5 Gap, 1 Gap: no legal basis, 1 Cannot conclude yet; Halvorn 1, 2, 1, 1 and 4 Out of scope; Brannock 6, 3, 1, 1 and 1 Out of scope. The fixtures are keyed in from `docs/demo-clients/`.
 2. **Isolation.** A client user of client A requests every route and server action with IDs belonging to client B and gets "not found" each time. A firm user who is not a member of an assessment gets the same.
 3. **Role matrix.** One test per row of the table in 03, for all five roles.
 4. **Lock.** After sign-off no role except admin can change anything, and an admin change without a reason is refused.
@@ -44,6 +44,6 @@ A sub-version that only adds part of a stage must still pass 1 to 4. If a check 
 
 ## Test data
 
-- `fixtures/auklet/`: the demo, pseudo names only.
+- `fixtures/quellmark/`, `fixtures/halvorn/`, `fixtures/brannock/`: the three fictional demo clients (18).
 - `fixtures/stress/`: generated, 500 activities and 2,000 inventory rows, for performance.
 - No real client data in tests, ever.

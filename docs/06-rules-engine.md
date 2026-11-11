@@ -250,15 +250,16 @@ Any automatic conclusion from checklist answers (for example "duty X does not ap
 
 **Not defined in these workbooks.** Workbook 4 says evidence testing of security controls is Phase 4 and outside it. The Security Controls sheet has a "Linked DPDP requirement (Rule 6 item)" list of seven values (Encryption or masking, Access control, Logging and monitoring, Backup and continuity, Log retention (1 year), Processor contract, Other measures), which does not match the "(a) to (e), five rows per system" wording in Notion. The rule is blocked until the owner supplies the Phase 4 design (15, O-8).
 
-## Acceptance case: Auklet School
+## Acceptance case: the three demo clients
 
-`fixtures/auklet/` will hold the demo as JSON, produced by importing the filled demo workbooks. The parity test asserts, per activity, the outcome, the why text, the route mismatch, the roll-ups, the zones and every check, and these totals:
+`fixtures/quellmark/`, `fixtures/halvorn/` and `fixtures/brannock/` hold the three fictional demo clients as JSON, keyed in from the files in `docs/demo-clients/` (summary in 18). The parity test asserts, per activity, the outcome, the why text, the route mismatch, the roll-ups, the zones and every check, and these totals:
 
-| Outcome | Count |
-| --- | --- |
-| Supported | 1 |
-| Gap | 3 |
-| Gap: no legal basis | 2 |
-| Cannot conclude yet | 2 |
+| Outcome | Quellmark | Halvorn | Brannock |
+| --- | --- | --- | --- |
+| Supported | 4 | 1 | 6 |
+| Gap | 5 | 2 | 3 |
+| Gap: no legal basis | 1 | 1 | 1 |
+| Cannot conclude yet | 1 | 1 | 1 |
+| Out of scope | 0 | 4 | 1 |
 
-**The filled Auklet School workbooks have not been supplied** (the files received are empty templates with one sample activity). Until they are, each rule above is tested against cases written from the formulas, and against the one sample activity (ACT-001 "Delivery scheduling").
+The client files are written descriptions, not filled workbooks, and give test answers by exception; the points to watch when keying them are in 18. Brannock's totals follow section 12 of its file, which differs from the file's opening table (15, O-37). Each rule above is also tested against cases written from the formulas, and against the one sample activity in the templates (ACT-001 "Delivery scheduling").

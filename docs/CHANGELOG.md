@@ -2,6 +2,14 @@
 
 Newest first. One line per change: what changed, in which document, and why.
 
+## 11 Nov 2026: demo clients, Excel exchange, plain theme
+
+- 18 (new) and `demo-clients/` (new): three fictional demo clients from the owner (Quellmark Finance, Halvorn Systems, Brannock Auto Components) replace the earlier single demo client as demo data and acceptance case (D-46). Every mention of the earlier client was removed from 00, 01, 04, 06, 12, 14, 15, 17 and the memory files.
+- 19 (new): plan for Excel import and export on every screen (F30) and one Excel page with a sheet-name and header check (F31), at the owner's request (D-47). 02, 09, 10 and 14 point to it; 10 now stops an import on any missing expected header, not only mandatory ones.
+- 08: "Interim plain theme" section added. White background, black lines and text until the functionality is good; REX theme later (D-45).
+- 15: O-1 settled; O-8 narrowed by the Phase 4 tables in the demo client files; O-37 to O-43 added.
+- `demo/index.html` (10 Nov): throwaway outline demo page, served on port 3000; now lists the three demo clients.
+
 ## 10 Nov 2026 (later still): working memory
 
 - 300 to 305 (new): working memory in `/docs`, at the owner's instruction, so that a build driven by Claude Sonnet (with a stronger model as subagent where needed) starts from everything learned so far and nothing is lost to context compaction.
@@ -18,7 +26,7 @@ Newest first. One line per change: what changed, in which document, and why.
 - 02: A8 (organisation profile and departments) added; F3, F4, F5, F6, F7, F11, F12, F14, F15, F16, F21 reworded to the workbook's logic.
 - 09: Organisation screens added; checklist and legal basis screens updated; security review screen marked not designed.
 - 14: workbook dependencies removed from S2 to S7; S2 gains `v0.2.3` (organisation profile, seed script) and the catalogue moves to `v0.2.4`; other workbooks join import and export in the stage that builds their screens; S5 exit check split so only the Auklet totals wait for the demo; S8 notes F21 is blocked.
-- 15: O-3 to O-7, O-9, O-11 closed; O-1 narrowed to the missing Auklet demo; O-8 raised to blocking; O-22 to O-36 added.
+- 15: O-3 to O-7, O-9, O-11 closed; O-1 narrowed to the missing demo data; O-8 raised to blocking; O-22 to O-36 added.
 - 00: D-11 updated; D-12 to D-15 added.
 - 12: parity test split into three parts; template hygiene test added.
 

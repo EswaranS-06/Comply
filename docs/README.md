@@ -26,6 +26,8 @@ Source: the Notion page "DPDP Assessment App: Project Documents" (read 10 Nov 20
 | 15 | [Open items](15-open-items.md) | What is still missing or unverified |
 | 16 | [Skills log](16-skills-log.md) | Which agent skills are installed and when each was used |
 | 17 | [Workbook summary](17-workbook-summary.md) | What the four Excel workbooks contain: sheets, columns, dropdowns, catalogue, tests |
+| 18 | [Demo clients](18-demo-clients.md) | The three fictional clients used as demo data and acceptance case; full files in `demo-clients/` |
+| 19 | [Excel exchange](19-excel-exchange.md) | Import and export on every screen, the one Excel page, and the sheet-name and header check |
 | -- | [Changelog](CHANGELOG.md) | Every change to these documents and to the plan |
 
 ## Working memory (3XX)

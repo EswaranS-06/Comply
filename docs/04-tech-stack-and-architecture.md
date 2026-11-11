@@ -55,14 +55,14 @@ lib/
   storage/              MinIO client, compress + encrypt pipeline
   mail/                 templates and sender
 prisma/                 schema, migrations, seed (catalogues, demo data)
-fixtures/               Auklet School demo as JSON, expected outcomes
+fixtures/               The three demo clients (18) as JSON, expected outcomes
 tests/                  unit, integration, e2e
 scripts/                release.sh and maintenance scripts
 ```
 
 ## Design decisions that matter
 
-1. **Rules live in code, not in the database.** Route mismatch, outcome, why, path checks, roll-ups and zones are pure functions in `lib/rules` with unit tests. The Auklet School demo is the acceptance case.
+1. **Rules live in code, not in the database.** Route mismatch, outcome, why, path checks, roll-ups and zones are pure functions in `lib/rules` with unit tests. The three demo clients in 18 are the acceptance case.
 2. **Derived values are computed, never typed and never stored by hand.** They are computed on read. If a list becomes slow, a derived value may be cached in a column, but only the rules module writes it, in the same transaction as the change that affects it.
 3. **Catalogues are versioned.** Data elements and test definitions carry a version so a locked assessment keeps the wording it used.
 4. **Everything is scoped to an assessment.** Every record carries an assessment ID and every query goes through the scoped helper.
@@ -72,7 +72,7 @@ scripts/                release.sh and maintenance scripts
 
 ## Performance budget (D-21)
 
-Measured with Playwright and Lighthouse against the production build on a 4 vCPU / 8 GB server holding the Auklet demo plus a 500-activity stress fixture. A release is blocked if a number is missed.
+Measured with Playwright and Lighthouse against the production build on a 4 vCPU / 8 GB server holding the three demo clients (18) plus a 500-activity stress fixture. A release is blocked if a number is missed.
 
 | Measure | Budget |
 | --- | --- |

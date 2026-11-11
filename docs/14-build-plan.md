@@ -10,7 +10,7 @@ Access and data scoping come first because every later screen depends on them an
 
 ## Timeline
 
-Target dates assume continuous work from 10 Nov 2026. They are targets, not promises; slips are recorded in the changelog. The template workbooks arrived on 10 Nov, so no stage waits for column layouts or rules any more. Two things are still missing (15): the filled Auklet School demo (the final parity check in S5) and the Phase 4 design (F21 in S8).
+Target dates assume continuous work from 10 Nov 2026. They are targets, not promises; slips are recorded in the changelog. The template workbooks arrived on 10 Nov, so no stage waits for column layouts or rules any more. One thing is still missing (15): the confirmed Phase 4 design (F21 in S8). The demo and acceptance data are the three fictional clients in 18. Screens are built in the plain interim theme (D-45, 08) until the owner asks for the REX theme. Excel import and export follow 19 as well as 10.
 
 | Stage | Name | Completes as | Target |
 | --- | --- | --- | --- |
@@ -76,6 +76,8 @@ Depends on: nothing outstanding.
 
 Exit checks: tests 6, 7 and 12 of 12 pass; the supplied templates import cleanly and the export opens in Excel with working dropdowns and formulas.
 
+S3 also builds the sheet map, the structure check (sheet names and headers), the Excel page and the shared Import / Export buttons planned in 19 (F30, F31); later stages add their sheets to the map and put the buttons on their screens.
+
 Depends on: nothing outstanding. The other sheets are added to import and export in the stage that builds their screens (ROPA family in S4, workbook 4 in S5 and S6, workbook 2 in S7).
 
 ## S4 Discovery -> v0.5.0
@@ -101,9 +103,9 @@ Depends on: nothing outstanding.
 | `v0.5.3` | Route mismatch (F15, R-6) and element check with its per-element finding (F16, R-8) |
 | `v0.6.0` | Activity Review and Element Check import and export; legal basis overview screen; R-6 to R-8 unit tests cover every branch of the workbook formulas |
 
-Exit checks: test 1 of 12, parts (a) and (b), passes. Part (c), the Auklet School totals (1 Supported, 3 Gap, 2 Gap: no legal basis, 2 Cannot conclude yet), is run as soon as the filled demo workbooks are supplied and is required before `v1.0.0`.
+Exit checks: test 1 of 12, parts (a) and (b), passes. Part (c), the outcomes and totals of the three demo clients (18), is required before `v1.0.0`.
 
-Depends on: the filled Auklet School workbooks for part (c) only (O-1).
+Depends on: the demo client fixtures keyed in from `docs/demo-clients/` for part (c).
 
 ## S6 Findings, evidence, audit viewer -> v0.7.0
 
@@ -171,7 +173,7 @@ F22 (other duties), F25 (diagram), F26 to F28 (rate, remediate, report), F29 (no
 | S2 | Not started | -- | |
 | S3 | Not started | -- | |
 | S4 | Not started | -- | |
-| S5 | Not started | -- | Final parity check needs the Auklet demo |
+| S5 | Not started | -- | Final parity check uses the three demo clients (18) |
 | S6 | Not started | -- | |
 | S7 | Not started | -- | |
 | S8 | Not started | -- | F21 needs the Phase 4 design |

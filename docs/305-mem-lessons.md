@@ -54,3 +54,12 @@ Things that were non-obvious or cost time. Add to this whenever something surpri
 | L-26 | Generate tables of columns, dropdowns and counts from the source files by script. Hand-typed versions of these had errors on the first pass (a question count was wrong) |
 | L-27 | When a rule document is renumbered, search every other document for the old numbers in the same commit |
 | L-28 | Mark anything not taken from the owner or the workbooks as an app addition or "to confirm", and list it in 15, so the owner can see what was assumed |
+
+## About the demo data and the demo page
+
+| # | Lesson |
+| --- | --- |
+| L-29 | When the owner says to remove a name, remove it from every file, including logs and changelogs, and check with a search that returns nothing. Do not quote the removed name when recording the instruction |
+| L-30 | The demo client files are descriptions, not workbooks: answers are given by exception, some rows stand for many records, and one file's summary table disagrees with its own detail table. Follow the detail table and list the difference in 15 |
+| L-31 | Installing a system service (`sudo` writing under `/etc/systemd`) was refused by the permission check. The outline demo runs as a plain background process and must be restarted by hand after a sandbox stop (303) |
+| L-32 | `instabox-port publish 3000` without `--private` gives a public link. Say so when publishing |

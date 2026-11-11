@@ -35,13 +35,21 @@ var state = {
   user: null,
   client: null,
   clients: [
-    { name: "Auklet School (demo)", sector: "Education", status: "In progress" },
-    { name: "Sample Retail Co", sector: "Retail", status: "Not started" }
-  ],
-  activities: [
-    { name: "Student admissions", route: "Consent (Sec 6)", consent: "Captured" },
-    { name: "CCTV at gate", route: "None identified", consent: "" },
-    { name: "Newsletter", route: "Consent (Sec 6)", consent: "Not captured" }
+    { name: "Quellmark Finance Ltd", sector: "Digital lending (NBFC)", status: "In progress", activities: [
+      { name: "Loan servicing and repayment", route: "Consent (Sec 6)", consent: "Captured" },
+      { name: "Marketing and cross-sell", route: "Consent (Sec 6)", consent: "" },
+      { name: "Fraud detection and device analytics", route: "None identified", consent: "" }
+    ] },
+    { name: "Halvorn Systems Pvt Ltd", sector: "Payroll and HR software", status: "In progress", activities: [
+      { name: "Payroll processing for customers", route: "Out of scope", consent: "" },
+      { name: "Salary benchmarking", route: "None identified", consent: "" },
+      { name: "Own staff HR", route: "Legitimate use (Sec 7)", consent: "" }
+    ] },
+    { name: "Brannock Auto Components Pvt Ltd", sector: "Manufacturing and export", status: "Not started", activities: [
+      { name: "Permanent staff HR and payroll", route: "Legitimate use (Sec 7)", consent: "" },
+      { name: "Group reporting to parent", route: "None identified", consent: "" },
+      { name: "Driver and fleet tracking", route: "Consent (Sec 6)", consent: "Not captured" }
+    ] }
   ]
 };
 var steps = ["1. Sign in", "2. Clients", "3. Assessment", "4. Result"];
@@ -86,7 +94,7 @@ function render() {
   if (state.step === 2) {
     v.innerHTML = '<h2>Assessment: ' + esc(state.client.name) + '</h2>' +
       '<table><tr><th>Processing activity</th><th>Legal route</th><th>Consent status</th><th>Result</th><th></th></tr>' +
-      state.activities.map(function (a, i) {
+      state.client.activities.map(function (a, i) {
         return "<tr><td>" + esc(a.name) + "</td><td>" + esc(a.route) + "</td><td>" + esc(a.consent || "-") +
           "</td><td>" + outcome(a) + '</td><td><button onclick="removeRow(' + i + ')">Remove</button></td></tr>';
       }).join("") + "</table>" +
@@ -99,9 +107,9 @@ function render() {
 
   if (state.step === 3) {
     var counts = {};
-    state.activities.forEach(function (a) { var o = outcome(a); counts[o] = (counts[o] || 0) + 1; });
+    state.client.activities.forEach(function (a) { var o = outcome(a); counts[o] = (counts[o] || 0) + 1; });
     v.innerHTML = '<h2>Result: ' + esc(state.client.name) + '</h2>' +
-      "<div>" + state.activities.length + " activities assessed</div>" +
+      "<div>" + state.client.activities.length + " activities assessed</div>" +
       "<table><tr><th>Result</th><th>Count</th></tr>" +
       Object.keys(counts).map(function (k) { return "<tr><td>" + k + "</td><td>" + counts[k] + "</td></tr>"; }).join("") +
       "</table>" +
@@ -118,10 +126,10 @@ function openClient(i) { state.client = state.clients[i]; go(2); }
 function addRow() {
   var n = document.getElementById("aName").value.trim();
   if (!n) { alert("Enter the activity name"); return; }
-  state.activities.push({ name: n, route: document.getElementById("aRoute").value, consent: document.getElementById("aConsent").value });
+  state.client.activities.push({ name: n, route: document.getElementById("aRoute").value, consent: document.getElementById("aConsent").value });
   render();
 }
-function removeRow(i) { state.activities.splice(i, 1); render(); }
+function removeRow(i) { state.client.activities.splice(i, 1); render(); }
 
 render();
 </script>

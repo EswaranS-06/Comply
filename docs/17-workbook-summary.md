@@ -174,7 +174,7 @@ Outcomes as the workbook defines them: **Supported** when every test for the rou
 
 ## Things to know
 
-1. **No demo data.** The Auklet School demo that the Notion documents use as the acceptance case is not in these files. The expected result (1 Supported, 3 Gap, 2 Gap: no legal basis, 2 Cannot conclude yet) cannot be reproduced until the filled demo workbooks are supplied.
+1. **No demo data.** The template files hold no filled demo. Demo and acceptance data come from the three fictional clients supplied separately on 11 Nov 2026 (18).
 2. **A real client name is present.** The Owners sheet of workbook 3 has a real client name as the client and document ID a real document ID, although the folder's README says the files hold no client data. This is why the Excel files are not committed.
 3. **Workbook 1 was not in the Notion documents.** The organisation profile and the department list are new to the project scope.
 4. **Two sets of refs both use the letter E.** E1 to E13 are entity questions in workbook 2; E1 and E2 are element tests in workbook 4.

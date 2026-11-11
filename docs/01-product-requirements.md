@@ -78,7 +78,7 @@ Details: [03-roles-and-permissions.md](03-roles-and-permissions.md).
 - An assessor completes Phases 1 to 3 for one client without opening Excel, except to import or export.
 - No fact is typed twice: IDs are picked from lists and names are looked up.
 - Every activity shows an outcome and the reason for it.
-- The Auklet School demo data loads and gives the same outcomes as the workbook demo: **1 Supported, 3 Gap, 2 Gap: no legal basis, 2 Cannot conclude yet.**
+- The three demo clients (18) load and give the expected outcomes: Quellmark 4 Supported, 5 Gap, 1 Gap: no legal basis, 1 Cannot conclude yet; Halvorn 1, 2, 1, 1 and 4 Out of scope; Brannock 6, 3, 1, 1 and 1 Out of scope.
 - The findings list exported from the app matches what is on screen.
 - The performance budget in 04 is met on the target server size.
 

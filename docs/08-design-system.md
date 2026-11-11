@@ -4,6 +4,22 @@ Comply uses the REX Cybersecurity identity and nothing else (D-30). The source i
 
 **Rule: token values are copied from `.skills/rex-website/templates/tokens.css`, never retyped.** If a value is needed that the kit does not have, it is derived from a kit ramp, checked for contrast, and recorded in this document.
 
+## Interim plain theme (in force now, D-45)
+
+The owner decided on 11 Nov 2026 that until the functionality is good, Comply is built plain. Everything below this section describes the REX theme, which is applied later, when the owner says so.
+
+| Item | Rule for now |
+| --- | --- |
+| Background | White `#FFFFFF` on every screen. No dark theme and no theme toggle yet |
+| Lines and borders | Black `#000000`, 1px solid |
+| Text | Black `#000000`. Font: Arial, the REX body font, at the sizes in this document |
+| Selected or active item | Inverted: black background, white text |
+| Disabled | Dashed border |
+| Status and outcome | Shown first by its text label, exactly as in 06. Colour is added only where a label alone is not enough to indicate something, and only after it is agreed (15, O-43) |
+| Not used yet | Gradients, shadows, cut corners, illustrations, animation, the REX logo treatments |
+
+Layout, spacing, component structure and accessibility rules in this document still apply, so switching to the REX theme later is a change of token values and not of markup. All colours go through CSS variables from the first screen (`--bg`, `--fg`, `--line`), set to white and black for now.
+
 ## Personality
 
 Technical, minimal, trustworthy. Precision over decoration: every element on a screen serves the assessor's task. Comply is a working tool used for hours, so the brand shows in type, colour discipline and a few cut corners, not in illustration.

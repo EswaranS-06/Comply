@@ -32,7 +32,7 @@ Append-only. One entry per working session, newest at the bottom. Say what was d
 **10. Workbooks.** The owner pointed to "the DPDP workbook folder". Found it at `/data/home/REX/DPDP-Workbooks` (also as a zip in `/data/home`). Four template workbooks. Read every sheet, header, dropdown and formula. Findings:
 - All rules are now known exactly from the formulas (06 rewritten, R-0 to R-12).
 - Workbook 1 (Organisation Profile, Departments) was not in Notion; added to scope (D-12).
-- The Auklet School demo is **not** in the files.
+- No filled demo is in the files (later settled by the three demo clients in 18).
 - Workbook 3 names a real client (a real client name) although described as clean; kept the Excel files out of git.
 - Phase 4 security review (F21) is defined nowhere.
 
@@ -45,3 +45,15 @@ Append-only. One entry per working session, newest at the bottom. Say what was d
 Commits on `forge` this session, oldest first: initial commit (shared with `main`); release script; skills; project documents; agent notes; workbook update; memory files.
 
 **13. Outline demo (owner asked, 10 Nov).** Wrote `demo/index.html`: one plain black-and-white page with sample data and JS showing the flow (sign in, clients, assessment, result). Its result logic is a simplified stand-in, not the rules engine. Served with `python3 -m http.server 3000 --directory /srv/comply/demo` (a plain background process; it does not survive a sandbox stop, restart it with the same command) and published with `instabox-port publish 3000` (public link). Owner will look at it at 10:00 on 11 Nov. The real build is still on hold. `demo/` must be removed or excluded before the first release so it does not reach `main`.
+
+## 11 Nov 2026, session 2 (planning; model: Claude Fable 5)
+
+**1. Demo clients.** The owner supplied three fictional client files and said to remove the earlier demo client everywhere. Copied the files to `docs/demo-clients/`, wrote 18 (summary, expected outcomes, points to watch), rewrote every mention in 00, 01, 04, 06, 12, 14, 15, 17, 302, the changelog and this log, and updated `demo/index.html`. A search of the repository for the old name returns nothing. Found that Brannock's opening totals disagree with its section 12; followed section 12 and raised O-37.
+
+**2. Excel exchange.** The owner asked for import and export everywhere plus one page that checks sheet names and headers and errors when they are missing, as a plan in Markdown. Wrote 19 (F30, F31): sheet map, structure check with exact messages, the Excel page, per-screen buttons, tests, stages. Raised O-39 to O-42 for the choices made.
+
+**3. Plain theme.** The owner said to keep white background with black lines and text until the functionality is good. Recorded as D-45 and a new section at the top of 08; O-43 asks about status colours.
+
+**4. Phase 4.** The demo client files show the five security items and the result words, which narrows O-8. Not treated as settled.
+
+**Left at end of session:** nothing in progress. Build still on hold. The outline demo is still served on port 3000 (see 302).
